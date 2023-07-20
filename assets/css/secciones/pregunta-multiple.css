@@ -1,0 +1,42 @@
+.plantilla__preguntaM{
+    display: none;
+}
+
+.preguntaM__titulo{
+    color: var(--background-objetos);
+}
+
+.preguntaM__numpregunta{
+    color: var(--background-objetos);
+}
+
+.preguntaM__textareadiv{
+    display: flex;
+    justify-content: center;
+}
+
+.preguntaM__caja{
+    width: 80%;
+    border-radius: 15px;
+    color: var(--background-objetos);
+}
+
+.preguntaM__respuestadiv{
+    display: flex;
+    margin-top: 15px;
+    padding: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.preguntaM__numrespuesta{
+    color: var(--background-objetos);
+}
+
+.preguntaM__respuestasdiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}

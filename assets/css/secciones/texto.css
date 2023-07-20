@@ -1,0 +1,22 @@
+.plantilla__texto{
+    display: none ;
+}
+
+.texto__titulo{
+    color: var(--background-objetos);
+}
+
+.texto__numparrafo{
+    color: var(--background-objetos);
+}
+
+.texto__textareadiv{
+    display: flex;
+    justify-content: center;
+}
+
+.texto__caja{
+    width: 80%;
+    border-radius: 15px;
+    color: var(--background-objetos);
+}

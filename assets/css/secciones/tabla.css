@@ -1,0 +1,154 @@
+.plantilla__tabla{
+    display: block;
+}
+
+.tabla__titulo{
+    color: var(--background-objetos);
+}
+
+.tabla__opciones{
+    background: var(--background-config);
+    padding: 0.5rem;
+    border-radius: 35px;
+    width: 50rem;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 1rem;
+}
+
+.tabla__conf{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0.25rem;
+}
+
+.config__text2{
+    margin-left: 1rem;
+}
+
+.btn__config{
+    width: 58px;
+    height: 38px;
+    border-radius: 15px;
+    box-shadow: 7px 4px 4px rgba(0, 0, 0, .25);
+    transition: 0.5s;
+}
+
+.btn__add{
+    background: var(--btn-add);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.btn__add:hover{
+    background: #a0c280;
+}
+
+.btn__cancel{
+    background: var(--btn-cancel);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.btn__cancel:hover{
+    background: #81473f;
+}
+
+.tabla__tabla{
+    margin-top: 1rem;
+}
+
+table {
+    border-collapse: collapse;
+}
+  
+table, th, td {
+    border: 1px solid black;
+}
+  
+td.coordenadas {
+    background-color: var(--background-menu);
+    color: var(--background-objetos);
+    font-weight: 700;
+    border-radius: 15px 0px 0px 0px;
+}
+
+.coordenadas__fila{
+    width: 1rem;
+}
+
+/* Aplicar estilos a los elementos input */
+table input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: center;
+}
+  
+table input:focus {
+    outline: none;
+}
+
+/* diseño de las subfilas y subcolumnas */
+.tabla-anidada {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+  
+.tabla-anidada td {
+    border-top: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+  
+td.celda-anidada {
+    padding: 0;
+}
+   
+/* Controles de filas y columnas */
+.tabla__controles{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.tabla__controles__filas-columnas{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--background-config);
+    width: 15rem;
+    padding: 0.5rem;
+    border-radius: 15px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn__filascolumnas{
+    background-color: var(--btn-add);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.75rem;
+}
+
+.btn__filascolumnas:hover{
+    background: #a0c280;
+}
+
+.btn__filasImg{
+    object-fit:cover;
+    width: 2rem;
+}

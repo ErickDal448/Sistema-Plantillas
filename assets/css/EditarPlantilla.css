@@ -1,0 +1,140 @@
+.editar__section{
+    display: flex;
+}
+
+.editar__menuizq{
+    display: flex;
+    flex-direction: column;
+    background: var(--background-menu);
+    height: 100vh;
+    padding: 0rem 1rem 0rem 1rem;
+    width: auto;
+    border-radius: 0px 15px 15px 0px;
+}
+
+.editar__menuicons{
+    width: 2rem;
+    height: 2rem;
+    margin: 10px 1px 1px 0px;
+}
+
+.editar__menuicons:hover{
+    cursor: pointer;
+}
+
+.editar__menuicons__bloque{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.editar__menunombre__bloque{
+    margin-left: 5px;
+    margin-top: 10px;
+    color: var(--background-objetos);
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0;
+}
+
+.editar__titulo{
+    color: var(--background-objetos);
+    margin-top: 10px;
+}
+
+.editar__menusecciones{
+    color: var(--background-objetos);
+}
+
+.editar__menuiconos__plantillas{
+    margin-top: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 75%;
+    overflow-y: auto;
+}
+
+.editar__menuicons__plantilla{
+    width: 2rem;
+    height: 2rem;
+}
+
+.editar__menuicons__plantilla:hover{
+    cursor: pointer;
+}
+
+.menu__agregarplantilla{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+}
+
+.menu__agregarplantillatxt{
+    color: var(--background-objetos);
+    margin-bottom: 0px;
+}
+
+.menu__agregarplantillaimg{
+    width: 5rem;
+    height: 5rem;
+}
+
+.menu__agregarplantillaimg:hover{
+    cursor: pointer;
+}
+
+/* seccion de edicion de plantilla */
+.editar__plantilla__section{
+   margin-left: 10px;
+   background-color: var(--background-editor); 
+   width: 100%;
+   border-radius: 15px 0px 0px 15px;
+   padding: 0rem 1rem 1rem 1rem;
+}
+
+/* seccion de seleccion de plantilla */
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.editar__section__agregar{
+    display: none;
+    position:fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(34, 52, 62, 0.5);
+}
+
+.editar__secMenuPlantilla{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+.card__ConfPlantilla{
+    background-color: var(--background-objetos);
+    margin: 30px;
+    border-radius: 15px;
+    width: 30rem; 
+    height: 25rem;
+}
+
+.editar__agregaciones{
+    justify-content: space-evenly;
+}

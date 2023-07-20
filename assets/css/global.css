@@ -1,0 +1,23 @@
+/*   Creacion de variables para colores de items   */
+:root{
+    /*   --variable: valor;   */
+    /*   Colores   */
+    --background-sistema: #8ABECE;
+    --background-plantillas: #608296;
+    --background-menu: #608296;
+    --background-editor: #3d7392;
+    --background-config: #83ADC5;
+    --btn-cancel: #A76161;
+    --btn-add:#77D1CC;
+    --background-objetos: #d9d9d9;
+    --background-blanco: #FFFFFF;
+
+    /*   Textos   */
+    --montserrat: 'Montserrat', sans-serif;
+    --karla: 'Karla', sans-serif;
+}  
+
+body{
+    background-color: var(--background-sistema);
+    font-family: var(--karla);
+}

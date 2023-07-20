@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Editar-Plantilla</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="./assets/css/global.css">
+        <link rel="stylesheet" href="./assets/css/EditarPlantilla.css">
+        <link rel="stylesheet" href="./assets/css/secciones/texto.css">
+        <link rel="stylesheet" href="./assets/css/secciones/pregunta-abierta.css">
+        <link rel="stylesheet" href="./assets/css/secciones/pregunta-multiple.css">
+        <link rel="stylesheet" href="./assets/css/secciones/tabla.css">
+        <link rel="stylesheet" href="./assets/css/secciones/agg-seccion.css">
+    </head>
+    <body>
+        <section class="editar__section">
+            <section class="editar__menuizq">
+                <img src="./assets/img/🦆 icon _menu_.png" alt="toggle-menu" class="editar__menuicons">
+                <div class="editar__menuicons__bloque">
+                    <a href="./index.html" class="editar__returnhome">
+                        <img src="./assets/img/icon _home.png" alt="return-home" class="editar__menuicons editar__menuicons__bloque">
+                    </a>
+                    <p class="editar__menunombre__bloque">HOME</p>
+                </div>
+
+                <div class="editar__menuiconos__plantillas">
+                    <h5 class="editar__titulo editar__tituloizq">Título ... </h2>
+                    <p class="editar__menusecciones">Mis secciones</p>
+
+                    <div class="editar__menuicons__bloque">
+                        <img src="./assets/img/icon-tabla.png" alt="" class="editar__menuicons__plantilla editar__menuicons__bloque">
+                        <p class="editar__menunombre__bloque">Tabla </p>
+                    </div>
+
+                    <div class="editar__menuicons__bloque">
+                        <img src="./assets/img/icon-tabla.png" alt="" class="editar__menuicons__plantilla editar__menuicons__bloque">
+                        <p class="editar__menunombre__bloque">Tabla </p>
+                    </div>
+                </div>
+
+                <div class="menu__agregarplantilla">
+                    <p class="menu__agregarplantillatxt menu__agglateraltxt"> Agregar sección</p>
+                    <img src="./assets/img/Agg-Plantilla-menu.png" alt="agregar bloque" class="menu__agregarplantillaimg menu__agglateral">
+                </div>
+            </section>
+
+            <section class="editar__plantilla__section">
+                <h5 class="editar__titulo">Título</h4>
+                    <!-- Seccion de agregar seccion -->
+                    <div class="menu__agregarplantilla plantilla__agregar">
+                        <p class="menu__agregarplantillatxt"> Agregar sección</p>
+                        <img src="./assets/img/Agg-Plantilla-menu.png" alt="agregar bloque" class="menu__agregarplantillaimg">
+                    </div>
+                    <!-- seccion de texto -->
+                    <div class="plantilla__texto">
+                        <h5 class="texto__titulo">Texto 1</h5>
+                        <div class="texto__parrafos">
+                            <p class="texto__numparrafo">Parrafo 1</p>
+                            <div class="texto__textareadiv">
+                                <textarea placeholder="Ingrese el texto aqui" class="texto__caja" rows="15"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seccion de pregunta abierta -->
+                    <div class="plantilla__preguntaA">
+                        <h5 class="preguntaA__titulo">Pregunta Abierta 1</h5>
+                        <div class="preguntaA__preguntas">
+                            <p class="preguntaA__numpregunta">Pregunta 1</p>
+                            <div class="preguntaA__textareadiv">
+                                <textarea placeholder="Ingrese su pregunta aquí" class="preguntaA__caja" rows="10"></textarea>
+                            </div>
+                            <div class="preguntaA__respuestadiv">
+                                <label class="col-sm-5 col-form-label preguntaA__numrespuesta">Número de renglones de respuesta:</label>
+                                <div class="col-sm-1">
+                                    <input type="number" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seccion de pregunta opcion multiple -->
+                    <div class="plantilla__preguntaM">
+                        <h5 class="preguntaM__titulo">Pregunta Multiple 1</h5>
+                        <div class="preguntaM__preguntas">
+                            <p class="preguntaM__numpregunta">Pregunta 1</p>
+                            <div class="preguntaM__textareadiv">
+                                <textarea placeholder="Ingrese su pregunta aquí" class="preguntaM__caja" rows="10"></textarea>
+                            </div>
+                            <div class="preguntaM__respuestadiv">
+                                <div>
+                                    <label class="col-sm-12 col-form-label preguntaM__numrespuesta">Número de respuestas:</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preguntaM__respuestasdiv">
+                                <div class="preguntaM__opcionesdiv">
+                                    <label class="col-sm-7 col-form-label preguntaM__numrespuesta">Respuesta 1:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="preguntaM__opcionesdiv">
+                                    <label class="col-sm-7 col-form-label preguntaM__numrespuesta">Respuesta 2:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seccion de tabla -->
+                    <div class="plantilla__tabla">
+                        <h5 class="tabla__titulo">Tabla 1</h5>
+                        <div style="display: flex; align-items: center; justify-content: center;">
+                            <div class="tabla__opciones">
+                                <div class="tabla__conf">
+                                    <div class="col-3 config--Columnas">
+                                        <label class="col-form-label">subcolumna en columna :</label>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <input type="text" class="form-control form-subcolumna1">
+                                    </div>
+                                    <div class="col-3 config--Columnas">
+                                        <label class="col-form-label config__text2">A partir de la fila :</label>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <input type="number" class="form-control form-subcolumna2">
+                                    </div>
+                                    <button type="button" class="btn btn__config btn__add add-subcolumna">
+                                            <img src="./assets/img/btn-add.png" alt="aceptar">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__cancel del-subcolumna">
+                                        <img src="./assets/img/btn-cancel.png" alt="eliminar">
+                                    </button>
+                                </div>
+                                <div class="tabla__conf config--Filas">
+                                    <div class="col-3 config--Columnas">
+                                        <label class="col-form-label">subfila en fila :</label>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <input type="number" class="form-control form-subfila1">
+                                    </div>
+                                    <div class="col-3 config--Columnas">
+                                        <label class="col-form-label config__text2">A partir de la columna :</label>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <input type="text" class="form-control form-subfila2">
+                                    </div>
+                                    <button type="button" class="btn btn__config btn__add add-subfila">
+                                            <img src="./assets/img/btn-add.png" alt="aceptar">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__cancel">
+                                        <img src="./assets/img/btn-cancel.png" alt="eliminar">
+                                    </button>
+                                </div>
+                                <div class="tabla__conf config--Nulls">
+                                    <div class="col-3 config--Columnas">
+                                        <label class="col-form-label">NULL en columna :</label>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <input type="number" class="form-control">
+                                    </div>
+                                    <div class="col-3 config--Columnas">
+                                        <label class="col-form-label config__text2">de la fila :</label>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <input type="number" class="form-control">
+                                    </div>
+                                    <button type="button" class="btn btn__config btn__add">
+                                            <img src="./assets/img/btn-add.png" alt="aceptar">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__cancel">
+                                        <img src="./assets/img/btn-cancel.png" alt="eliminar">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tabla__espaciotabla">
+                            <!--Area editable en el archivo js de generar-tabla.js-->
+                        </div>
+
+                        <div class="tabla__controles">
+                            <div class="tabla__controles__filas-columnas">
+                                <button type="button" class="btn btn__config btn__filascolumnas btn__aggFila">
+                                    <img src="./assets/img/btn-down.png" alt="agregar fila" class="btn__filasImg">
+                                </button>
+                                <button type="button" class="btn btn__config btn__filascolumnas btn__delFila">
+                                    <img src="./assets/img/btn-up.png" alt="eliminar fila" class="btn__filasImg">
+                                </button>
+                                <button type="button" class="btn btn__config btn__filascolumnas btn__titleFila">
+                                    <img src="./assets/img/btn-title.png" alt="hacer titulo las filas" class="btn__filasImg">
+                                </button>
+                            </div>
+
+                            <div class="tabla__controles__filas-columnas">
+                                <button type="button" class="btn btn__config btn__filascolumnas btn__delColumna">
+                                    <img src="./assets/img/btn-left.png" alt="eliminar columna" class="btn__filasImg">
+                                </button>
+                                <button type="button" class="btn btn__config btn__filascolumnas btn__aggColumna">
+                                    <img src="./assets/img/btn-right.png" alt="agregar columna" class="btn__filasImg">
+                                </button>
+                                <button type="button" class="btn btn__config btn__filascolumnas btn__titleColumna">
+                                    <img src="./assets/img/btn-title.png" alt="hacer titulo las columnas" class="btn__filasImg">
+                                </button>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+            </section>
+        </section>
+
+        <section class="editar__section__agregar">
+            <section class="editar__secMenuPlantilla"  id="editar__MenuCrear">
+                <div class="card card__ConfPlantilla" id="card__ConfPlantilla">
+                    <div class="card-body">
+                        <h5 class="card-title">Agregación de sección</h5>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Selecciona el tipo de sección</option>
+                            <option value="1">Tabla</option>
+                            <option value="2">Texto</option>
+                            <option value="3">Pregunta abierta</option>
+                            <option value="4">Pregunta multiple</option>
+                        </select>
+                        <div class="editar__opciones__agregacion">
+                            <div class="row editar__agregaciones">
+                                
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary btn__plantilla" disabled>Agregar Sección</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <script src="./js/editar-plantilla.js"></script>
+        <script src="./js/generar-tabla.js"></script>
+    </body>
+</html>
