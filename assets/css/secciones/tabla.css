@@ -117,7 +117,6 @@ table input:focus {
 td.celda-anidada {
     padding: 0;
 }
-  
 /* Controles de filas y columnas */
 .tabla__controles{
     display: flex;

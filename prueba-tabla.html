@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        .td__cols{
+          display: flex;
+        }
+        .celda-ajustada-cols {
+          width: 3rem;
+          height: 100%;
+        }
+        .input-ajustada {
+          width: 100%;
+          height: 100%;
+        }
+      </style>
+      
+  </head>
+  <body>
+    <div class="tabla__espaciotabla">
+      <!--Area editable en el archivo js de generar-tabla.js-->
+      <div class="d-flex justify-content-center">
+        <table class="table tabla__tabla mx-auto">
+          <tbody>
+            <tr class="coordenadas">
+              <td class="coordenadas"></td>
+              <td class="coordenadas">A</td>
+              <td class="coordenadas">B</td>
+              <td class="coordenadas">C</td>
+            </tr>
+            <tr>
+                <td class="coordenadas coordenadas__fila">1</td>
+                <td class="celda-anidada">
+                    <table>
+                    <tr>
+                        <td colspan="4" class="celda-ajustada-cols col-6"><input type="text" class="input-ajustada"/></td>
+                    </tr>
+                    <tr>
+                        <td class="celda-ajustada-cols"><input type="text" class="input-ajustada"/></td>
+                        <td class="celda-ajustada-cols"><input type="text" class="input-ajustada"/></td>
+                    </tr>
+                    </table>
+                </td>
+              <td class="celda-anidada">
+                <input type="text" />
+                <table class="tabla-anidada">
+                  <tbody>
+                    <tr>
+                      <td><input type="text" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td class="celda-anidada">
+                <input type="text" />
+                <table class="tabla-anidada">
+                  <tbody>
+                    <tr>
+                      <td><input type="text" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="coordenadas coordenadas__fila">2</td>
+              <td class="td__cols">
+                <table>
+                <tr>
+                    <td class="celda-ajustada-cols"><input type="text" class="input-ajustada"/></td>
+                    <td class="celda-ajustada-cols"><input type="text" class="input-ajustada"/></td>
+                </tr>
+                </table>
+              </td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="coordenadas coordenadas__fila">3</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="coordenadas coordenadas__fila">4</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="coordenadas coordenadas__fila">5</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <input type="number" class="coordenada__fila"  id="numFila">
+    <button onclick="agregarSubfila()">Agregar subfila</button>
+
+  </body>
+  <script>
+function agregarSubfila() {
+  // Obtener el número de la fila donde se quiere agregar la subfila
+  var fila = document.querySelector(".coordenada__fila").value;
+
+  // Obtener la tabla y la fila donde se quiere agregar la subfila
+  var tabla = document.querySelector(".tabla__tabla");
+  var hilera = tabla.rows[fila];
+
+  // Insertar una nueva fila debajo de la fila especificada
+  var nuevaHilera = tabla.insertRow(fila + 1);
+
+  // Agregar celdas a la nueva fila
+  for (var i = 0; i < hilera.cells.length; i++) {
+    var celda = nuevaHilera.insertCell(i);
+    if (i === 0) {
+      // Si es la primera celda, agregar el número de la subfila
+      celda.textContent = fila + "." + (nuevaHilera.rowIndex - hilera.rowIndex);
+    } else {
+      // Si no es la primera celda, agregar un input
+      var input = document.createElement("input");
+      input.type = "text";
+      celda.appendChild(input);
+    }
+  }
+
+  // Ajustar el rowSpan de la primera celda de la fila original
+  hilera.cells[0].rowSpan += 1;
+}
+
+
+
+  </script>
+</html>
