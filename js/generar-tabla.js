@@ -23,9 +23,11 @@ btnAggFila.addEventListener("click", function() {
         var textoCelda = document.createTextNode(++filas);
         celda.appendChild(textoCelda);
       } else {
-        var input = document.createElement("input");
-        input.type = "text";
-        celda.appendChild(input);
+        var textarea = document.createElement("textarea");
+        textarea.setAttribute("maxlength", "100");
+        textarea.setAttribute("oninput", "autoResize(this)");
+        textarea.classList.add("input-ajustada");
+        celda.appendChild(textarea);
       }
     }
   }
@@ -49,9 +51,11 @@ btnAggColumna.addEventListener("click", function() {
         var textoCelda = document.createTextNode(String.fromCharCode(64 + columnas));
         celda.appendChild(textoCelda);
       } else {
-        var input = document.createElement("input");
-        input.type = "text";
-        celda.appendChild(input);
+        var textarea = document.createElement("textarea");
+        textarea.setAttribute("maxlength", "100");
+        textarea.setAttribute("oninput", "autoResize(this)");
+        textarea.classList.add("input-ajustada");
+        celda.appendChild(textarea);
       }
     }
   }
@@ -106,9 +110,11 @@ for (var i = 1; i <= filas; i++) {
 
   for (var j = 1; j <= columnas; j++) {
     var celda = document.createElement("td");
-    var input = document.createElement("input"); // Crear un elemento input para cada celda
-    input.type = "text";
-    celda.appendChild(input);
+    var textarea = document.createElement("textarea"); // Crear un elemento textarea para cada celda
+    textarea.setAttribute("maxlength", "100");
+    textarea.setAttribute("oninput", "autoResize(this)");
+    textarea.classList.add("input-ajustada");
+    celda.appendChild(textarea);
     hilera.appendChild(celda);
   }
 
@@ -149,20 +155,18 @@ div.appendChild(divCentrado);
         var hileraNueva = tablaAnidada.insertRow();
         var celdaNueva = hileraNueva.insertCell();
         celdaNueva.classList.add("celda-ajustada");
-        var inputNuevo = document.createElement("input");
-        inputNuevo.type = "text";
-        inputNuevo.classList.add("input-ajustada");
-        celdaNueva.appendChild(inputNuevo);
-
-        // Ajustar el rowSpan de la primera celda de la tabla anidada
-        tablaAnidada.rows[0].cells[0].rowSpan += 1;
+        var textareaNuevo = document.createElement("textarea");
+        textareaNuevo.setAttribute("maxlength", "100");
+        textareaNuevo.setAttribute("oninput", "autoResize(this)");
+        textareaNuevo.classList.add("input-ajustada");
+        celdaNueva.appendChild(textareaNuevo);
       } else {
         // Si no existe una tabla anidada, ocultar el input dentro de la segunda celda y crear una nueva tabla anidada en esta celda
         var celda = hilera.cells[1];
-        var input = celda.querySelector("input");
-        input.classList.add("tabla-inputfilaTema");
-        if (input) {
-          input.style.display = "none";
+        var textarea = celda.querySelector("textarea");
+        textarea.classList.add("tabla-inputfilaTema");
+        if (textarea) {
+          textarea.style.display = "none";
         }
         celda.style.padding = "0px";
         var tablaAnidada = document.createElement("table");
@@ -171,24 +175,27 @@ div.appendChild(divCentrado);
         var hilera1 = tablaAnidada.insertRow();
         var hilera2 = tablaAnidada.insertRow();
         var celda1 = hilera1.insertCell();
-        celda1.rowSpan = 2;
+        celda1.rowSpan = 50;
         celda1.classList.add("celda-ajustada", "col-6");
-        var input1 = document.createElement("input");
-        input1.type = "text";
-        input1.classList.add("input-ajustada");
-        celda1.appendChild(input1);
+        var textarea1 = document.createElement("textarea");
+        textarea1.setAttribute("maxlength", "100");
+        textarea1.setAttribute("oninput", "autoResize(this)");
+        textarea1.classList.add("input-ajustada");
+        celda1.appendChild(textarea1);
         var celda2 = hilera1.insertCell();
         celda2.classList.add("celda-ajustada");
-        var input2 = document.createElement("input");
-        input2.type = "text";
-        input2.classList.add("input-ajustada");
-        celda2.appendChild(input2);
+        var textarea2 = document.createElement("textarea");
+        textarea2.setAttribute("maxlength", "100");
+        textarea2.setAttribute("oninput", "autoResize(this)");
+        textarea2.classList.add("input-ajustada");
+        celda2.appendChild(textarea2);
         var celda3 = hilera2.insertCell();
         celda3.classList.add("celda-ajustada");
-        var input3 = document.createElement("input");
-        input3.type = "text";
-        input3.classList.add("input-ajustada");
-        celda3.appendChild(input3);
+        var textarea3 = document.createElement("textarea");
+        textarea3.setAttribute("maxlength", "100");
+        textarea3.setAttribute("oninput", "autoResize(this)");
+        textarea3.classList.add("input-ajustada");
+        celda3.appendChild(textarea3);
         celda.appendChild(tablaAnidada);
       }
       
@@ -278,9 +285,11 @@ div.appendChild(divCentrado);
           // Agregar una hilera anidada horizontal
           var hileraAnidada = document.createElement("tr");
           var celdaAnidada = document.createElement("td");
-          var input = document.createElement("input");
-          input.type = "text";
-          celdaAnidada.appendChild(input);
+          var textarea = document.createElement("textarea");
+          textarea.setAttribute("maxlength", "100");
+          textarea.setAttribute("oninput", "autoResize(this)");
+          textarea.classList.add("input-ajustada");
+          celdaAnidada.appendChild(textarea);
           hileraAnidada.appendChild(celdaAnidada);
           tblBodyAnidado.appendChild(hileraAnidada);
 
@@ -331,19 +340,10 @@ div.appendChild(divCentrado);
   // ---------------------- //
   // SECCION DE SUBCOLUMNAS //
   // ---------------------- //
-  function agregarSubcolumna() {
-    // Obtener el número de la columna donde se quiere agregar la subcolumna
-    let columna = document.querySelector(".form-subcolumna1").value;
-  
-    // Verificar que el valor del input sea un número válido
-    if (isNaN(columna) || columna < 1 || columna > columnas) {
-      alert("Por favor ingresa un valor de columna válido");
-      return;
-    }
-  
+  function agregarSubcolumna(col) {
     // Obtener la tabla y la columna donde se quiere agregar la subcolumna
     var tabla = document.querySelector(".tabla__tabla");
-    var celda = tabla.rows[1].cells[columna];
+    var celda = tabla.rows[1].cells[col];
   
     // Verificar si ya existe una tabla anidada en la celda
     var tablaAnidada = celda.querySelector("table");
@@ -353,10 +353,11 @@ div.appendChild(divCentrado);
       var celdaNueva = tablaAnidada.rows[1].insertCell();
       celdaNueva.classList.add("celda-ajustada-cols");
       
-      var inputNuevo = document.createElement("input");
-      inputNuevo.type = "text";
-      inputNuevo.classList.add("input-ajustada");
-      celdaNueva.appendChild(inputNuevo);
+      var textareaNuevo = document.createElement("textarea");
+      textareaNuevo.setAttribute("maxlength", "100");
+      textareaNuevo.setAttribute("oninput", "autoResize(this)");
+      textareaNuevo.classList.add("input-ajustada");
+      celdaNueva.appendChild(textareaNuevo);
       celdaNueva.style.width = "2.5rem";
       tablaAnidada.style.width = "100%";
   
@@ -364,10 +365,10 @@ div.appendChild(divCentrado);
       tablaAnidada.rows[0].cells[0].colSpan += 1;
     } else {
       // Si no existe una tabla anidada, ocultar el input dentro de la celda y crear una nueva tabla anidada en esta celda
-      var input = celda.querySelector("input");
-      input.classList.add("tabla-inputfilaTema");
-      if (input) {
-        input.style.display = "none";
+      var textarea = celda.querySelector("textarea");
+      textarea.classList.add("tabla-inputfilaTema");
+      if (textarea) {
+        textarea.style.display = "none";
       }
       celda.style.padding = "0px";
       var tablaAnidada = document.createElement("table");
@@ -376,71 +377,99 @@ div.appendChild(divCentrado);
       var celda1 = hilera1.insertCell();
       celda1.colSpan = 4;
       celda1.classList.add("celda-ajustada-cols", "col-6");
-      var input1 = document.createElement("input");
-      input1.type = "text";
-      input1.classList.add("input-ajustada");
-      celda1.appendChild(input1);
+      var textarea1 = document.createElement("textarea");
+      textarea1.setAttribute("maxlength", "100");
+      textarea1.setAttribute("oninput", "autoResize(this)");
+      textarea1.classList.add("input-ajustada");
+      celda1.appendChild(textarea1);
       for (var i = 0; i < 2; i++) {
         var celdaNueva = hilera2.insertCell();
         celdaNueva.classList.add("celda-ajustada-cols");
         celdaNueva.style.width = "2.5rem";
         tablaAnidada.style.width = "100%";
-        var inputNuevo = document.createElement("input");
-        inputNuevo.type = "text";
-        inputNuevo.classList.add("input-ajustada");
-        celdaNueva.appendChild(inputNuevo);
+        var textareaNuevo = document.createElement("textarea");
+        textareaNuevo.setAttribute("maxlength", "100");
+        textareaNuevo.setAttribute("oninput", "autoResize(this)");
+        textareaNuevo.classList.add("input-ajustada");
+        celdaNueva.appendChild(textareaNuevo);
       }
       celda.appendChild(tablaAnidada);
     }
   }
   
-  document.querySelector(".add-subcolumna").addEventListener("click", function() {
-    // Obtener el valor del campo de entrada
-    var columna = document.querySelector(".form-subcolumna1").value;
-  
-    // Verificar que el valor del input sea un número válido
-    if (isNaN(columna) || columna < 1 || columna > columnas) {
-      alert("Por favor ingresa un número de columna válido");
-      return;
-    }
-  
+  function recorridoSubcolumnas(col){
     // Recorrer cada celda de la columna especificada
     for (var i = 2; i <= filas; i++) {
-      var celda = tblBody.rows[i].cells[columna];
-  
+      var celda = tblBody.rows[i].cells[col.charCodeAt(0) - 64];
+
       // Verificar si ya existe una tabla en la celda
       var tablaExistente = celda.querySelector("table");
       if (tablaExistente) {
-        // Si ya existe una tabla, agregar un nuevo td con un input dentro a la primera fila de esta tabla
+        // Si ya existe una tabla, agregar un nuevo td con un textarea dentro a la primera fila de esta tabla
         var trExistente = tablaExistente.rows[0];
         var tdNuevo = document.createElement("td");
         tdNuevo.classList.add("celda-ajustada-cols");
-        var inputNuevo = document.createElement("input");
-        inputNuevo.type = "text";
-        inputNuevo.classList.add("input-ajustada");
-        tdNuevo.appendChild(inputNuevo);
+        var textareaNuevo = document.createElement("textarea");
+        textareaNuevo.setAttribute("maxlength", "100");
+        textareaNuevo.setAttribute("oninput", "autoResize(this)");
+        textareaNuevo.classList.add("input-ajustada");
+        tdNuevo.appendChild(textareaNuevo);
         trExistente.appendChild(tdNuevo);
       } else {
-        // Si no existe una tabla, ocultar el input existente en la celda y crear una nueva tabla con dos inputs
-        var inputExistente = celda.querySelector("input");
-        inputExistente.style.display = "none";
-        var tablaNueva = document.createElement("table");
-        var trNuevo = document.createElement("tr");
+        // Ocultar el input existente en la celda
+        var textAreaExistente = celda.querySelector("textarea");
+        textAreaExistente.style.display = "none";
+        var tabla = document.createElement("table");
+        var tr = document.createElement("tr");
         for (var j = 0; j < 2; j++) {
-          var tdNuevo = document.createElement("td");
-          tdNuevo.classList.add("celda-ajustada-cols");
-          var inputNuevo = document.createElement("input");
-          inputNuevo.type = "text";
-          inputNuevo.classList.add("input-ajustada");
-          tdNuevo.appendChild(inputNuevo);
-          trNuevo.appendChild(tdNuevo);
+          var td = document.createElement("td");
+          td.classList.add("celda-ajustada-cols");
+          var textareaNuevo = document.createElement("textarea");
+          textareaNuevo.setAttribute("maxlength", "100");
+          textareaNuevo.setAttribute("oninput", "autoResize(this)");
+          textareaNuevo.classList.add("input-ajustada");
+          td.appendChild(textareaNuevo);
+          tr.appendChild(td);
         }
-        tablaNueva.appendChild(trNuevo);
-        celda.appendChild(tablaNueva);
+        tabla.appendChild(tr);
+        celda.appendChild(tabla);
       }
     }
-  });
+   }
   
+   document.querySelector(".add-subcolumna").addEventListener("click", function() {
+    // Obtener el valor del campo de entrada
+    var columna = document.querySelector(".form-subcolumna1").value;
+    var fila = document.querySelector(".form-subcolumna2").value;
   
-  
+    // Verificar que el valor del input sea un número válido
+    if (columna.charCodeAt(0) - 64 < 1 || columna.charCodeAt(0) - 64 > columnas) {
+      alert("Por favor ingresa una columna válida, elegiste la: " + (columna.charCodeAt(0) - 64));
+      return;
+    }
+    
+    // Verificar que el valor del input sea un número válido
+    if (isNaN(fila) || fila < 1 || fila > filas) {
+      alert("Por favor ingresa un número de fila válido");
+      return;
+    }
 
+    if(fila == 1)
+    {
+      agregarSubcolumna(columna.charCodeAt(0) - 64);
+      // Recorrer cada celda de la columna especificada
+      recorridoSubcolumnas(columna);
+    }
+
+    if(fila == 2){
+      recorridoSubcolumnas(columna);
+    }
+  });
+    
+  //------------------------------------- //
+  //  Funcion de autorecise del textarea  // 
+  //------------------------------------- //
+  function autoResize(textarea) {
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
+  }
