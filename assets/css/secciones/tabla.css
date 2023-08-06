@@ -124,8 +124,7 @@ td.celda-anidada {
 
 }
 .celda-ajustada-colms {
-    width: 3rem;
-    height: 100%;
+    height: 5rem;
     border-bottom: none;
     border-top: none;
   }

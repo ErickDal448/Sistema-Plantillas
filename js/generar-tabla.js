@@ -27,6 +27,7 @@ btnAggFila.addEventListener("click", function() {
         textarea.setAttribute("maxlength", "100");
         textarea.setAttribute("oninput", "autoResize(this)");
         textarea.classList.add("input-ajustada");
+        celda.classList.add("celdaClickNull");
         celda.appendChild(textarea);
       }
     }
@@ -55,6 +56,7 @@ btnAggColumna.addEventListener("click", function() {
         textarea.setAttribute("maxlength", "100");
         textarea.setAttribute("oninput", "autoResize(this)");
         textarea.classList.add("input-ajustada");
+        celda.classList.add("celdaClickNull");
         celda.appendChild(textarea);
       }
     }
@@ -114,6 +116,7 @@ for (var i = 1; i <= filas; i++) {
     textarea.setAttribute("maxlength", "100");
     textarea.setAttribute("oninput", "autoResize(this)");
     textarea.classList.add("input-ajustada");
+    celda.classList.add("celdaClickNull");
     celda.appendChild(textarea);
     hilera.appendChild(celda);
   }
@@ -159,6 +162,7 @@ div.appendChild(divCentrado);
         textareaNuevo.setAttribute("maxlength", "100");
         textareaNuevo.setAttribute("oninput", "autoResize(this)");
         textareaNuevo.classList.add("input-ajustada");
+        celdaNueva.classList.add("celdaClickNull");
         celdaNueva.appendChild(textareaNuevo);
       } else {
         // Si no existe una tabla anidada, ocultar el input dentro de la segunda celda y crear una nueva tabla anidada en esta celda
@@ -168,6 +172,7 @@ div.appendChild(divCentrado);
         if (textarea) {
           textarea.style.display = "none";
         }
+        celda.classList.remove("celdaClickNull");
         celda.style.padding = "0px";
         var tablaAnidada = document.createElement("table");
         tablaAnidada.classList.add("tabla-filasTema");
@@ -181,6 +186,7 @@ div.appendChild(divCentrado);
         textarea1.setAttribute("maxlength", "100");
         textarea1.setAttribute("oninput", "autoResize(this)");
         textarea1.classList.add("input-ajustada");
+        celda1.classList.add("celdaClickNull");
         celda1.appendChild(textarea1);
         var celda2 = hilera1.insertCell();
         celda2.classList.add("celda-ajustada");
@@ -188,6 +194,7 @@ div.appendChild(divCentrado);
         textarea2.setAttribute("maxlength", "100");
         textarea2.setAttribute("oninput", "autoResize(this)");
         textarea2.classList.add("input-ajustada");
+        celda2.classList.add("celdaClickNull");
         celda2.appendChild(textarea2);
         var celda3 = hilera2.insertCell();
         celda3.classList.add("celda-ajustada");
@@ -195,6 +202,7 @@ div.appendChild(divCentrado);
         textarea3.setAttribute("maxlength", "100");
         textarea3.setAttribute("oninput", "autoResize(this)");
         textarea3.classList.add("input-ajustada");
+        celda3.classList.add("celdaClickNull");
         celda3.appendChild(textarea3);
         celda.appendChild(tablaAnidada);
       }
@@ -401,6 +409,8 @@ div.appendChild(divCentrado);
     // Recorrer cada celda de la columna especificada
     for (var i = 2; i <= filas; i++) {
       var celda = tblBody.rows[i].cells[col.charCodeAt(0) - 64];
+      celda.style.padding = "0px";
+      celda.style.border = "none";
 
       // Verificar si ya existe una tabla en la celda
       var tablaExistente = celda.querySelector("table");
@@ -408,7 +418,7 @@ div.appendChild(divCentrado);
         // Si ya existe una tabla, agregar un nuevo td con un textarea dentro a la primera fila de esta tabla
         var trExistente = tablaExistente.rows[0];
         var tdNuevo = document.createElement("td");
-        tdNuevo.classList.add("celda-ajustada-cols");
+        tdNuevo.classList.add("celda-ajustada-colms");
         var textareaNuevo = document.createElement("textarea");
         textareaNuevo.setAttribute("maxlength", "100");
         textareaNuevo.setAttribute("oninput", "autoResize(this)");
@@ -423,7 +433,7 @@ div.appendChild(divCentrado);
         var tr = document.createElement("tr");
         for (var j = 0; j < 2; j++) {
           var td = document.createElement("td");
-          td.classList.add("celda-ajustada-cols");
+          td.classList.add("celda-ajustada-colms");
           var textareaNuevo = document.createElement("textarea");
           textareaNuevo.setAttribute("maxlength", "100");
           textareaNuevo.setAttribute("oninput", "autoResize(this)");
