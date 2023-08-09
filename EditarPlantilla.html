@@ -127,13 +127,17 @@
                                         <label class="col-form-label">subcolumna en columna :</label>
                                     </div>
                                     <div class="col-sm-1">
-                                        <input type="text" class="form-control form-b form-subcolumna1">
+                                        <select class="form-select form-subcolumna1"></select>
                                     </div>
                                     <div class="col-3 config--Columnas">
                                         <label class="col-form-label config__text2">A partir de la fila :</label>
                                     </div>
                                     <div class="col-sm-1">
-                                        <input type="number" class="form-control form-subcolumna2">
+                                        <select class="form-select form-subcolumna2">
+                                            <option value="0"></option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                        </select>
                                     </div>
                                     <button type="button" class="btn btn__config btn__add add-subcolumna">
                                             <img src="./assets/img/btn-add.png" alt="aceptar">
@@ -147,7 +151,8 @@
                                         <label class="col-form-label">subfila en fila :</label>
                                     </div>
                                     <div class="col-sm-1">
-                                        <input type="number" class="form-control form-subfila1">
+                                        <select class="form-select form-subfila1">
+                                        </select>
                                     </div>
                                     <div class="col-3 config--Columnas">
                                         <label class="col-form-label config__text2">A partir de la columna :</label>
@@ -163,26 +168,6 @@
                                             <img src="./assets/img/btn-add.png" alt="aceptar">
                                     </button>
                                     <button type="button" class="btn btn__config btn__cancel del-subfila">
-                                        <img src="./assets/img/btn-cancel.png" alt="eliminar">
-                                    </button>
-                                </div>
-                                <div class="tabla__conf config--Nulls">
-                                    <div class="col-3 config--Columnas">
-                                        <label class="col-form-label">NULL en columna :</label>
-                                    </div>
-                                    <div class="col-sm-1">
-                                        <input type="number" class="form-control">
-                                    </div>
-                                    <div class="col-3 config--Columnas">
-                                        <label class="col-form-label config__text2">de la fila :</label>
-                                    </div>
-                                    <div class="col-sm-1">
-                                        <input type="number" class="form-control">
-                                    </div>
-                                    <button type="button" class="btn btn__config btn__add">
-                                            <img src="./assets/img/btn-add.png" alt="aceptar">
-                                    </button>
-                                    <button type="button" class="btn btn__config btn__cancel">
                                         <img src="./assets/img/btn-cancel.png" alt="eliminar">
                                     </button>
                                 </div>
@@ -248,7 +233,7 @@
         </section>
 
         <script src="./js/editar-plantilla.js"></script>
-        <script src="./js/generar-tabla.js"></script>
-        <script src="./js/tabla-nulls.js"></script>
+        <script src="./js/Secciones/Tabla/generar-tabla.js"></script>
+        <script src="./js/Secciones/Tabla/nulls-tabla.js"></script>
     </body>
 </html>

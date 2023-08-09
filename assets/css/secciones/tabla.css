@@ -132,15 +132,16 @@ td.celda-anidada {
 .input-ajustada {
     width: 100%;
     height: 90%;
-  }
-  textarea {
+}
+textarea {
     resize: vertical;
     white-space:normal;
     overflow: auto;
     width: 100%;
     border: none;
     height: auto;
-  }
+    transition: 0.4s;
+}
 .tabla__controles__filas-columnas{
     display: flex;
     flex-wrap: wrap;

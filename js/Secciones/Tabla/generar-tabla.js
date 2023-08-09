@@ -27,11 +27,13 @@ btnAggFila.addEventListener("click", function() {
         textarea.setAttribute("maxlength", "100");
         textarea.setAttribute("oninput", "autoResize(this)");
         textarea.classList.add("input-ajustada");
-        celda.classList.add("celdaClickNull");
+        textarea.classList.add("celdaClickNull");
+        celda.classList.add("padre");
         celda.appendChild(textarea);
       }
     }
   }
+  ActualizarSelectFilas();
 });
 btnDelFila.addEventListener("click", function() {
   // Eliminar una fila de la tabla
@@ -39,6 +41,7 @@ btnDelFila.addEventListener("click", function() {
     tblBody.deleteRow(-1);
     filas--;
   }
+  ActualizarSelectFilas();
 });
 
 btnAggColumna.addEventListener("click", function() {
@@ -56,11 +59,13 @@ btnAggColumna.addEventListener("click", function() {
         textarea.setAttribute("maxlength", "100");
         textarea.setAttribute("oninput", "autoResize(this)");
         textarea.classList.add("input-ajustada");
-        celda.classList.add("celdaClickNull");
+        textarea.classList.add("celdaClickNull");
+        celda.classList.add("padre");
         celda.appendChild(textarea);
       }
     }
   }
+  ActualizarSelectColumnas();
 });
 
 btnDelColumna.addEventListener("click", function() {
@@ -71,6 +76,7 @@ btnDelColumna.addEventListener("click", function() {
     }
     columnas--;
   }
+  ActualizarSelectColumnas();
 });
 
 // Obtener la referencia del elemento div con la clase tabla__espaciotabla
@@ -116,7 +122,8 @@ for (var i = 1; i <= filas; i++) {
     textarea.setAttribute("maxlength", "100");
     textarea.setAttribute("oninput", "autoResize(this)");
     textarea.classList.add("input-ajustada");
-    celda.classList.add("celdaClickNull");
+    textarea.classList.add("celdaClickNull");
+    celda.classList.add("padre");
     celda.appendChild(textarea);
     hilera.appendChild(celda);
   }
@@ -125,6 +132,8 @@ for (var i = 1; i <= filas; i++) {
 }
 
 tabla.appendChild(tblBody);
+ActualizarSelectFilas();
+ActualizarSelectColumnas();
 
 // Crear un elemento div para centrar la tabla
 var divCentrado = document.createElement("div");
@@ -162,7 +171,7 @@ div.appendChild(divCentrado);
         textareaNuevo.setAttribute("maxlength", "100");
         textareaNuevo.setAttribute("oninput", "autoResize(this)");
         textareaNuevo.classList.add("input-ajustada");
-        celdaNueva.classList.add("celdaClickNull");
+        textareaNuevo.classList.add("celdaClickNull");
         celdaNueva.appendChild(textareaNuevo);
       } else {
         // Si no existe una tabla anidada, ocultar el input dentro de la segunda celda y crear una nueva tabla anidada en esta celda
@@ -171,8 +180,7 @@ div.appendChild(divCentrado);
         textarea.classList.add("tabla-inputfilaTema");
         if (textarea) {
           textarea.style.display = "none";
-        }
-        celda.classList.remove("celdaClickNull");
+         }
         celda.style.padding = "0px";
         var tablaAnidada = document.createElement("table");
         tablaAnidada.classList.add("tabla-filasTema");
@@ -186,7 +194,7 @@ div.appendChild(divCentrado);
         textarea1.setAttribute("maxlength", "100");
         textarea1.setAttribute("oninput", "autoResize(this)");
         textarea1.classList.add("input-ajustada");
-        celda1.classList.add("celdaClickNull");
+        textarea1.classList.add("celdaClickNull");
         celda1.appendChild(textarea1);
         var celda2 = hilera1.insertCell();
         celda2.classList.add("celda-ajustada");
@@ -194,7 +202,7 @@ div.appendChild(divCentrado);
         textarea2.setAttribute("maxlength", "100");
         textarea2.setAttribute("oninput", "autoResize(this)");
         textarea2.classList.add("input-ajustada");
-        celda2.classList.add("celdaClickNull");
+        textarea2.classList.add("celdaClickNull");
         celda2.appendChild(textarea2);
         var celda3 = hilera2.insertCell();
         celda3.classList.add("celda-ajustada");
@@ -202,7 +210,7 @@ div.appendChild(divCentrado);
         textarea3.setAttribute("maxlength", "100");
         textarea3.setAttribute("oninput", "autoResize(this)");
         textarea3.classList.add("input-ajustada");
-        celda3.classList.add("celdaClickNull");
+        textarea3.classList.add("celdaClickNull");
         celda3.appendChild(textarea3);
         celda.appendChild(tablaAnidada);
       }
@@ -297,6 +305,7 @@ div.appendChild(divCentrado);
           textarea.setAttribute("maxlength", "100");
           textarea.setAttribute("oninput", "autoResize(this)");
           textarea.classList.add("input-ajustada");
+          textarea.classList.add("celdaClickNull");
           celdaAnidada.appendChild(textarea);
           hileraAnidada.appendChild(celdaAnidada);
           tblBodyAnidado.appendChild(hileraAnidada);
@@ -306,7 +315,7 @@ div.appendChild(divCentrado);
         }
       }
     });
-
+    // -------------------------- //
     //eliminar subfilas completas
     // Agregar un controlador de eventos al botón para que llame a la función eliminarSubfilaCompleta cuando se presione el botón
     document.querySelector(".del-subfila").addEventListener("click", eliminarSubfilaCompleta);
@@ -341,7 +350,7 @@ div.appendChild(divCentrado);
         }
       }
       for(k = 2; k <= columnas; k++){
-        hilera.cells[k].style.padding = "0px";
+        hilera.cells[k].style.padding = "0.5rem 0.5rem";
       }
     }
 
@@ -365,6 +374,7 @@ div.appendChild(divCentrado);
       textareaNuevo.setAttribute("maxlength", "100");
       textareaNuevo.setAttribute("oninput", "autoResize(this)");
       textareaNuevo.classList.add("input-ajustada");
+      textareaNuevo.classList.add("celdaClickNull");
       celdaNueva.appendChild(textareaNuevo);
       celdaNueva.style.width = "2.5rem";
       tablaAnidada.style.width = "100%";
@@ -389,6 +399,7 @@ div.appendChild(divCentrado);
       textarea1.setAttribute("maxlength", "100");
       textarea1.setAttribute("oninput", "autoResize(this)");
       textarea1.classList.add("input-ajustada");
+      textarea1.classList.add("celdaClickNull");
       celda1.appendChild(textarea1);
       for (var i = 0; i < 2; i++) {
         var celdaNueva = hilera2.insertCell();
@@ -399,6 +410,7 @@ div.appendChild(divCentrado);
         textareaNuevo.setAttribute("maxlength", "100");
         textareaNuevo.setAttribute("oninput", "autoResize(this)");
         textareaNuevo.classList.add("input-ajustada");
+        textareaNuevo.classList.add("celdaClickNull");
         celdaNueva.appendChild(textareaNuevo);
       }
       celda.appendChild(tablaAnidada);
@@ -423,6 +435,7 @@ div.appendChild(divCentrado);
         textareaNuevo.setAttribute("maxlength", "100");
         textareaNuevo.setAttribute("oninput", "autoResize(this)");
         textareaNuevo.classList.add("input-ajustada");
+        textareaNuevo.classList.add("celdaClickNull");
         tdNuevo.appendChild(textareaNuevo);
         trExistente.appendChild(tdNuevo);
       } else {
@@ -438,6 +451,7 @@ div.appendChild(divCentrado);
           textareaNuevo.setAttribute("maxlength", "100");
           textareaNuevo.setAttribute("oninput", "autoResize(this)");
           textareaNuevo.classList.add("input-ajustada");
+          textareaNuevo.classList.add("celdaClickNull");
           td.appendChild(textareaNuevo);
           tr.appendChild(td);
         }
@@ -475,11 +489,125 @@ div.appendChild(divCentrado);
       recorridoSubcolumnas(columna);
     }
   });
+
+  // -------------------------- //
+  //eliminar subcolumnas completas
+  document.querySelector(".del-subcolumna").addEventListener("click", function() {
+    // Obtener el valor del campo de entrada
+    var columna = document.querySelector(".form-subcolumna1").value;
+    let fila = document.querySelector(".form-subcolumna2").value;
+
+    // Verificar que el valor del input sea un número válido
+    if (columna.charCodeAt(0) - 64 < 1 || columna.charCodeAt(0) - 64 > columnas) {
+      alert("Por favor ingresa una columna válida, elegiste la: " + (columna.charCodeAt(0) - 64));
+      return;
+    }
+
+    //Realizar recorridos dependiendo de la fila
+    if (fila == 1){
+      recorridoSubcolumnasDel(columna);
+      subcolumnaFila1Del(columna);
+    }
+    else if (fila == 2){
+      recorridoSubcolumnasDel(columna);
+    }
     
+  });
+  
+  //recorrido subcolumnas eliminacion
+  function recorridoSubcolumnasDel(col){
+    // Recorrer cada celda de la columna especificada
+    for (var i = 2; i <= filas; i++) {
+      let celda = tblBody.rows[i].cells[col.charCodeAt(0) - 64];
+  
+      // Verificar si ya existe una tabla anidada en la celda
+      let tablaAnidada = celda.querySelector("table");
+      if (tablaAnidada) {
+        // Si ya existe una tabla anidada, eliminar el último td de la primera fila de esta tabla
+        let trExistente = tablaAnidada.rows[0];
+        trExistente.removeChild(trExistente.lastChild);
+  
+        // Si no hay más td en la primera fila, eliminar la tabla anidada y mostrar el textarea existente en la celda
+        if (trExistente.childNodes.length === 1) {
+          celda.removeChild(tablaAnidada);
+          let textareaExistente = celda.querySelector("textarea");
+          textareaExistente.style.display = "block";
+          celda.style.padding = "0.5rem 0.5rem";
+          celda.style.border = "1px solid black";
+        }
+      }
+    }
+  }
+  
+  // eliminacion de la fila 1 segun x columna
+  function subcolumnaFila1Del(col) {
+  
+    // Recorrer cada celda de la columna especificada
+    for (var i = 1; i <= filas; i++) {
+      let celda = tblBody.rows[i].cells[col.charCodeAt(0) - 64];
+  
+      // Verificar si ya existe una tabla anidada en la celda
+      let tablaAnidada = celda.querySelector("table");
+      if (tablaAnidada) {
+        // Si ya existe una tabla anidada, eliminar el último td de la segunda fila de esta tabla
+        let trExistente = tablaAnidada.rows[1];
+        trExistente.removeChild(trExistente.lastChild);
+  
+        // Si no hay más td en la segunda fila, eliminar la tabla anidada y mostrar el textarea existente en la celda
+        if (trExistente.childNodes.length === 1) {
+          celda.removeChild(tablaAnidada);
+          let textareaExistente = celda.querySelector("textarea");
+          textareaExistente.style.display = "block";
+        }
+      }
+    }
+  };
+  
   //------------------------------------- //
   //  Funcion de autorecise del textarea  // 
   //------------------------------------- //
   function autoResize(textarea) {
     textarea.style.height = 'auto';
     textarea.style.height = textarea.scrollHeight + 'px';
+  }
+
+  // ---------------------------------------- //
+  //  Funcion de selects de filas y columnas  //
+  // ---------------------------------------- //
+  function ActualizarSelectFilas(){
+    // Seleccionar el elemento 
+    let selector = document.querySelector(".form-subfila1");
+    selector.innerHTML = "";
+    let option = document.createElement("option");
+    option.value = 0;
+    option.text = "";
+    selector.appendChild(option);
+
+    // agregar las opciones de filas al select
+    for (var i = 1; i <= filas; i++) {
+      let option = document.createElement("option");
+      option.value = i;
+      option.text = i;
+      selector.appendChild(option);
+      console.log(i);
+    }
+  }
+
+  function ActualizarSelectColumnas(){
+    // Seleccionar el elemento 
+    let selector = document.querySelector(".form-subcolumna1");
+    selector.innerHTML = "";
+    let option = document.createElement("option");
+    option.value = 0;
+    option.text = "";
+    selector.appendChild(option);
+
+    // agregar las opciones de filas al select
+    for (var i = 1; i <= columnas; i++) {
+      let option = document.createElement("option");
+      option.value = (String.fromCharCode(64 + i));
+      option.text = (String.fromCharCode(64 + i));
+      selector.appendChild(option);
+      console.log(i);
+    }
   }
