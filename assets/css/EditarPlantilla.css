@@ -2,13 +2,18 @@
     display: flex;
 }
 
+.editar__Espaciado{
+    width: 14vw;
+}
+
 .editar__menuizq{
     display: flex;
+    position: fixed;
     flex-direction: column;
     background: var(--background-menu);
     height: 100vh;
     padding: 0rem 1rem 0rem 1rem;
-    width: auto;
+    width: 12vw;
     border-radius: 0px 15px 15px 0px;
 }
 

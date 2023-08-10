@@ -2,8 +2,14 @@
     // Selecciona el elemento editar__menuicons
     const menuIcon = document.querySelector('.editar__menuicons');
 
+    // Seleccionar el menu izquierdo 
+    const menuizq = document.querySelector('.editar__menuizq');
+
     // Seleccionar el icono de agregar seccion
     const iconAgg = document.querySelector('.menu__agglateral');
+
+    // Seleccionar el div de espaciado para el contenido de la plantilla
+    const espaciado = document.querySelector('.editar__Espaciado');
 
     // Crea una variable para llevar un registro de si los textos están visibles o no
     let textsVisible = true;
@@ -20,6 +26,8 @@
         });
         iconAgg.style.width = '2rem';
         iconAgg.style.height = '2rem';
+        espaciado.style.width= '5vw';
+        menuizq.style.width = 'auto';
         textsVisible = false;
     } 
     else { // Si los textos están ocultos, muéstralos
@@ -28,6 +36,8 @@
         });
         iconAgg.style.width = '5rem';
         iconAgg.style.height = '5rem';
+        espaciado.style.width= '14vw';
+        menuizq.style.width = '12vw';
         textsVisible = true;
     }
     });

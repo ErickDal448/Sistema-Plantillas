@@ -22,7 +22,43 @@ tablaPadre.addEventListener("mouseup", function(e) {
     tiempoFin = new Date().getTime();
 
     // Verificar si el tiempo transcurrido entre los dos eventos es mayor a 3 segundos
-    if (tiempoFin - tiempoInicio > 400) {
+    if (tiempoFin - tiempoInicio > 200) {
+      // Cambiar el estilo del textarea correspondiente
+      let textarea = e.target;
+      if (textarea.style.backgroundColor === "black") {
+        textarea.style.backgroundColor = "white";
+        textarea.value = "";
+        textarea.readOnly = false;
+      } else {
+        textarea.style.backgroundColor = "black";
+        textarea.value = null;
+        textarea.style.height = "100%";
+        textarea.readOnly = true;
+      }
+    }
+  }
+});
+
+// ---------------------------------------------------- //
+// Funcion para que funcione en moviles de misma manera //
+// Agregar un controlador de eventos touchstart al elemento padre
+tablaPadre.addEventListener("touchstart", function(e) {
+  // Verificar si el elemento que se hizo clic es un textarea con la clase "celdaClickNull"
+  if (e.target.classList.contains("celdaClickNull")) {
+    // Establecer el tiempo de inicio del clic
+    tiempoInicio = new Date().getTime();
+  }
+});
+
+// Agregar un controlador de eventos touchend al elemento padre
+tablaPadre.addEventListener("touchend", function(e) {
+  // Verificar si el elemento que se hizo clic es un textarea con la clase "celdaClickNull"
+  if (e.target.classList.contains("celdaClickNull")) {
+    // Establecer el tiempo de fin del clic
+    tiempoFin = new Date().getTime();
+
+    // Verificar si el tiempo transcurrido entre los dos eventos es mayor a 3 segundos
+    if (tiempoFin - tiempoInicio > 200) {
       // Cambiar el estilo del textarea correspondiente
       let textarea = e.target;
       if (textarea.style.backgroundColor === "black") {

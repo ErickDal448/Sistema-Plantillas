@@ -18,7 +18,9 @@
         <link rel="stylesheet" href="./assets/css/secciones/agg-seccion.css">
     </head>
     <body>
+        
         <section class="editar__section">
+            <div class="editar__Espaciado"></div>
             <section class="editar__menuizq">
                 <img src="./assets/img/🦆 icon _menu_.png" alt="toggle-menu" class="editar__menuicons">
                 <div class="editar__menuicons__bloque">
@@ -174,10 +176,6 @@
                             </div>
                         </div>
 
-                        <div class="tabla__espaciotabla">
-                            <!--Area editable en el archivo js de generar-tabla.js-->
-                        </div>
-
                         <div class="tabla__controles">
                             <div class="tabla__controles__filas-columnas">
                                 <button type="button" class="btn btn__config btn__filascolumnas btn__aggFila">
@@ -192,17 +190,32 @@
                             </div>
 
                             <div class="tabla__controles__filas-columnas">
+                                <button type="button" class="btn btn__config btn__filascolumnas btn__barraFila" onclick="TitleFila()">
+                                    <img src="./assets/img/btn-title.png" alt="Agregar barra fila" class="btn__filasImg">
+                                </button>
+                                <button type="button" class="btn btn__config btn__filascolumnas btn__barraColumna" onclick="TitleColumna()">
+                                    <img src="./assets/img/btn-title.png" alt="agregar barra columna" class="btn__filasImg">
+                                </button>
+                            </div> 
+
+                            <div class="tabla__controles__filas-columnas">
                                 <button type="button" class="btn btn__config btn__filascolumnas btn__delColumna">
                                     <img src="./assets/img/btn-left.png" alt="eliminar columna" class="btn__filasImg">
                                 </button>
                                 <button type="button" class="btn btn__config btn__filascolumnas btn__aggColumna">
                                     <img src="./assets/img/btn-right.png" alt="agregar columna" class="btn__filasImg">
                                 </button>
-                                <button type="button" class="btn btn__config btn__filascolumnas btn__titleColumna">
+                                <button type="button" class="btn btn__config btn__filascolumnas btn__titleColumna" onclick="AgregarTituloColumnas()">
                                     <img src="./assets/img/btn-title.png" alt="hacer titulo las columnas" class="btn__filasImg">
                                 </button>
-                            </div>
+                            </div>  
                         </div>
+
+                        <div class="tabla__espaciotabla">
+                            <!--Area editable en el archivo js de generar-tabla.js-->
+                        </div>
+
+                        
                         
 
                     </div>

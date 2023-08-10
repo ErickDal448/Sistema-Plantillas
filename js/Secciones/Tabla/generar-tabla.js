@@ -423,6 +423,8 @@ div.appendChild(divCentrado);
       var celda = tblBody.rows[i].cells[col.charCodeAt(0) - 64];
       celda.style.padding = "0px";
       celda.style.border = "none";
+      celda.style.flexDirection = "column";
+      celda.style.display = "flex";
 
       // Verificar si ya existe una tabla en la celda
       var tablaExistente = celda.querySelector("table");
@@ -534,6 +536,7 @@ div.appendChild(divCentrado);
           textareaExistente.style.display = "block";
           celda.style.padding = "0.5rem 0.5rem";
           celda.style.border = "1px solid black";
+          celda.style.display = "";
         }
       }
     }
@@ -589,7 +592,6 @@ div.appendChild(divCentrado);
       option.value = i;
       option.text = i;
       selector.appendChild(option);
-      console.log(i);
     }
   }
 
@@ -608,6 +610,149 @@ div.appendChild(divCentrado);
       option.value = (String.fromCharCode(64 + i));
       option.text = (String.fromCharCode(64 + i));
       selector.appendChild(option);
-      console.log(i);
     }
   }
+
+  // --------------------------------------- //
+  //  Funcion de titles de filas y columnas  //
+  // --------------------------------------- //
+  // COLUMNAS //
+
+  var CambioTituloColumna = false;
+  function TitleColumna() {
+    if (!CambioTituloColumna){
+      CambioTituloColumna = true;
+      // Recorrer cada celda de la columna 1
+      for (var i = 1; i <= filas; i++) {
+        let celda = tblBody.rows[i].cells[1];
+        let textarea = celda.querySelector('.celdaClickNull');
+        console.log("entro el for");
+        celda.style.background = 'lightgray';
+        textarea.style.background = 'lightgray';
+        textarea.style.color = "blue";
+
+        // Verificar si ya existe una tabla anidada en la celda
+        let tablaAnidada = celda.querySelector("table");
+        if (tablaAnidada) {
+          console.log("entro el if");
+          // Si ya existe una tabla anidada, cambiar los textarea del interior de la tabla
+          let textareasAnidados = tablaAnidada.querySelectorAll(".celdaClickNull");
+          textareasAnidados.forEach(function(textarea) {
+            textarea.style.background = 'lightgray';
+            textarea.style.color = "blue";
+          });
+        }
+      }
+    }
+    else if(CambioTituloColumna){
+      CambioTituloColumna = false;
+      // Recorrer cada celda de la columna 1
+      for (var i = 1; i <= filas; i++) {
+        let celda = tblBody.rows[i].cells[1];
+        let textarea = celda.querySelector('.celdaClickNull');
+        console.log("entro el for");
+        celda.style.background = 'white';
+        textarea.style.background = 'white';
+        textarea.style.color = "black";
+
+        // Verificar si ya existe una tabla anidada en la celda
+        let tablaAnidada = celda.querySelector("table");
+        if (tablaAnidada) {
+          console.log("entro el if");
+          // Si ya existe una tabla anidada, cambiar los textarea del interior de la tabla
+          let textareasAnidados = tablaAnidada.querySelectorAll(".celdaClickNull");
+          textareasAnidados.forEach(function(textarea) {
+            textarea.style.background = 'white';
+            textarea.style.color = "black";
+          });
+        }
+      }
+    }
+  }
+
+  function AgregarTituloColumnas() {
+    
+    if (filas < 100) {
+      var hilera = document.createElement("tr");
+      for (var j = 0; j <= 1; j++) {
+        var celda = document.createElement("td");
+        if (j === 0) {
+          celda.classList.add("coordenadas");
+          var textoCelda = document.createTextNode("T");
+          celda.appendChild(textoCelda);
+          hilera.appendChild(celda);
+        } else {
+          // Establecer el atributo colspan de la celda en el número de columnas de la tabla
+          celda.setAttribute("colspan", columnas + 1);
+        
+          // Crear un nuevo textarea y agregarlo a la celda
+          var textarea = document.createElement("textarea");
+          textarea.setAttribute("maxlength", "100");
+          textarea.setAttribute("oninput", "autoResize(this)");
+          textarea.classList.add("input-ajustada");
+          textarea.classList.add("celdaClickNull");
+          celda.appendChild(textarea);  
+          // Agregar la celda a la fila y la fila al cuerpo de la tabla
+          hilera.appendChild(celda);
+          tblBody.insertBefore(hilera, tblBody.rows[1]);
+        }
+      }
+    }
+    ActualizarSelectFilas();
+  }
+  
+  
+
+  // FILAS //
+  var CambioTituloFila = false;
+  function TitleFila() {
+    // Recorrer cada celda de la fila 1
+    
+    let fila = tblBody.rows[1];
+    if (!CambioTituloFila) {
+      CambioTituloFila = true;
+      for (var i = 1; i < fila.cells.length; i++) {
+        let celda = fila.cells[i];
+        let textarea = celda.querySelector('.celdaClickNull');
+        celda.style.background = 'lightgray';
+        textarea.style.background = 'lightgray';
+        textarea.style.color = "blue";
+  
+        // Verificar si ya existe una tabla anidada en la celda
+        let tablaAnidada = celda.querySelector("table");
+        if (tablaAnidada) {
+          // Si ya existe una tabla anidada, cambiar los textarea del interior de la tabla
+          let textareasAnidados = tablaAnidada.querySelectorAll(".celdaClickNull");
+          textareasAnidados.forEach(function(textarea) {
+            textarea.style.background = 'lightgray';
+            textarea.style.color = "blue";
+          });
+        }
+      }
+    } else if (CambioTituloFila) {
+      CambioTituloFila = false;
+      for (var i = 1; i < fila.cells.length; i++) {
+        let celda = fila.cells[i];
+        let textarea = celda.querySelector('.celdaClickNull');
+        celda.style.background = 'white';
+        textarea.style.background = 'white';
+        textarea.style.color = "black";
+  
+        // Verificar si ya existe una tabla anidada en la celda
+        let tablaAnidada = celda.querySelector("table");
+        if (tablaAnidada) {
+          // Si ya existe una tabla anidada, cambiar los textarea del interior de la tabla
+          let textareasAnidados = tablaAnidada.querySelectorAll(".celdaClickNull");
+          textareasAnidados.forEach(function(textarea) {
+            textarea.style.background = 'white';
+            textarea.style.color = "black";
+          });
+        }
+      }
+    }
+  }
+  
+  
+
+  
+  

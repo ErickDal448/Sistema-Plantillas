@@ -97,6 +97,10 @@ table input:focus {
     outline: none;
 }
 
+.celdaClickNull{
+    background: white;
+}
+
 /* diseño de las subfilas y subcolumnas */
 .tabla-anidada {
     border-collapse: collapse;
@@ -121,7 +125,7 @@ td.celda-anidada {
 .tabla__controles{
     display: flex;
     justify-content: space-between;
-
+    margin-top: 1rem;
 }
 .celda-ajustada-colms {
     height: 5rem;
@@ -132,6 +136,7 @@ td.celda-anidada {
 .input-ajustada {
     width: 100%;
     height: 90%;
+    text-align: center;
 }
 textarea {
     resize: vertical;
