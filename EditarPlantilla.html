@@ -184,17 +184,14 @@
                                 <button type="button" class="btn btn__config btn__filascolumnas btn__delFila">
                                     <img src="./assets/img/btn-up.png" alt="eliminar fila" class="btn__filasImg">
                                 </button>
-                                <button type="button" class="btn btn__config btn__filascolumnas btn__titleFila">
-                                    <img src="./assets/img/btn-title.png" alt="hacer titulo las filas" class="btn__filasImg">
+                                <button type="button" class="btn btn__config btn__filascolumnas btn__titleFila" onclick="TitleFila()">
+                                    <img src="./assets/img/icon-title-colum.png" alt="hacer titulo las filas" class="btn__filasImg">
                                 </button>
                             </div>
 
                             <div class="tabla__controles__filas-columnas">
-                                <button type="button" class="btn btn__config btn__filascolumnas btn__barraFila" onclick="TitleFila()">
+                                <button type="button" class="btn btn__config btn__filascolumnas btn__barraFila" onclick="AgregarTituloColumnas()" >
                                     <img src="./assets/img/btn-title.png" alt="Agregar barra fila" class="btn__filasImg">
-                                </button>
-                                <button type="button" class="btn btn__config btn__filascolumnas btn__barraColumna" onclick="TitleColumna()">
-                                    <img src="./assets/img/btn-title.png" alt="agregar barra columna" class="btn__filasImg">
                                 </button>
                             </div> 
 
@@ -205,8 +202,8 @@
                                 <button type="button" class="btn btn__config btn__filascolumnas btn__aggColumna">
                                     <img src="./assets/img/btn-right.png" alt="agregar columna" class="btn__filasImg">
                                 </button>
-                                <button type="button" class="btn btn__config btn__filascolumnas btn__titleColumna" onclick="AgregarTituloColumnas()">
-                                    <img src="./assets/img/btn-title.png" alt="hacer titulo las columnas" class="btn__filasImg">
+                                <button type="button" class="btn btn__config btn__filascolumnas btn__titleColumna" onclick="TitleColumna()">
+                                    <img src="./assets/img/icon-title-rows.png" alt="hacer titulo las columnas" class="btn__filasImg">
                                 </button>
                             </div>  
                         </div>
@@ -214,10 +211,21 @@
                         <div class="tabla__espaciotabla">
                             <!--Area editable en el archivo js de generar-tabla.js-->
                         </div>
-
                         
-                        
-
+                        <div style="display: flex; justify-content: space-between; flex-wrap:wr;">
+                            <div class="tabla__controles__filas-columnas">
+                                <label for="image" class="btn btn__config btn__filascolumnas">
+                                  <img src="./assets/img/icon-evidence.png" alt="Adjuntar Evidencia/Imagen" class="btn__filasImg">
+                                </label>
+                                <input id="image" type="file" style="display:none;"/>
+                            </div>
+                            <div class="tabla__controles__filas-columnas">
+                                <label for="image" class="btn btn__config btn__filascolumnas">
+                                  <img src="./assets/img/icon-download.png" alt="Adjuntar Evidencia/Imagen" class="btn__filasImg">
+                                </label>
+                                <input id="image" type="file" style="display:none;"/>
+                              </div>
+                        </div>
                     </div>
             </section>
         </section>
