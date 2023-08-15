@@ -15,7 +15,75 @@ var btnDelFila = document.querySelector(".btn__delFila");
 var btnAggColumna = document.querySelector(".btn__aggColumna");
 var btnDelColumna = document.querySelector(".btn__delColumna");
 
-// Agregar un controlador de eventos a cada botón
+// --------------------- //
+// CREAR TABLA PRINCIPAL //
+// --------------------- //
+  // Obtener la referencia del elemento div con la clase tabla__espaciotabla
+  var div = document.querySelector(".tabla__espaciotabla");
+
+  // Crear un elemento table y un elemento tbody
+  var tabla = document.createElement("table");
+  tabla.classList.add("table"); // Agregar la clase table de Bootstrap
+  tabla.classList.add("tabla__tabla"); // Agregar la clase tabla__tabla para editar
+  var tblBody = document.createElement("tbody");
+
+  // Agregar una fila adicional al principio para mostrar las coordenadas de las columnas
+  var hilera = document.createElement("tr");
+  hilera.classList.add("coordenadas"); // Agregar una clase a la primera fila
+  for (var j = 0; j <= columnas; j++) {
+    var celda = document.createElement("td");
+    celda.classList.add("coordenadas");
+    if (j === 0) {
+      var textoCelda = document.createTextNode("");
+    } else {
+      var textoCelda = document.createTextNode(String.fromCharCode(64 + j));
+    }
+    celda.appendChild(textoCelda);
+    hilera.appendChild(celda);
+  }
+  tblBody.appendChild(hilera);
+
+  // Crear las filas y columnas de la tabla
+  for (var i = 1; i <= filas; i++) {
+    var hilera = document.createElement("tr");
+
+    // Agregar una columna adicional al principio para mostrar las coordenadas de las filas
+    var celda = document.createElement("td");
+    celda.classList.add("coordenadas"); // Agregar una clase a la primera columna
+    celda.classList.add("coordenadas__fila"); // Agregar una clase a la primera columna
+    var textoCelda = document.createTextNode(i);
+    celda.appendChild(textoCelda);
+    hilera.appendChild(celda);
+
+    for (var j = 1; j <= columnas; j++) {
+      var celda = document.createElement("td");
+      var textarea = document.createElement("textarea"); // Crear un elemento textarea para cada celda
+      textarea.setAttribute("maxlength", "100");
+      textarea.setAttribute("oninput", "autoResize(this)");
+      textarea.classList.add("input-ajustada");
+      textarea.classList.add("celdaClickNull");
+      celda.classList.add("padre");
+      celda.appendChild(textarea);
+      hilera.appendChild(celda);
+    }
+
+    tblBody.appendChild(hilera);
+  }
+
+  tabla.appendChild(tblBody);
+  ActualizarSelectFilas();
+  ActualizarSelectColumnas();
+
+  // Crear un elemento div para centrar la tabla
+  var divCentrado = document.createElement("div");
+  divCentrado.classList.add("d-flex", "justify-content-center"); // Agregar clases de Bootstrap para centrar la tabla
+  divCentrado.appendChild(tabla);
+
+  div.appendChild(divCentrado);
+
+// ------------- //
+// Agregar Filas //
+// ------------- //
 btnAggFila.addEventListener("click", function() {
   // Agregar una fila a la tabla
   if (filas < 100) {
@@ -39,15 +107,22 @@ btnAggFila.addEventListener("click", function() {
   }
   ActualizarSelectFilas();
 });
+
+// -------------- //
+// Eliminar Filas //
+// -------------- //
 btnDelFila.addEventListener("click", function() {
   // Eliminar una fila de la tabla
-  if (filas > 2) {
+  if (filas > 1) {
     tblBody.deleteRow(-1);
     filas--;
   }
   ActualizarSelectFilas();
 });
 
+// ---------------- //
+// Agregar Columnas //
+// ---------------- //
 btnAggColumna.addEventListener("click", function() {
   let contBool = 0;
   if(boolTitleCols == true){
@@ -77,11 +152,14 @@ btnAggColumna.addEventListener("click", function() {
       }
     }
   }
-  AgregarTituloColumnas();
-  AgregarTituloColumnas();
+  aggMainTitle();
+  aggMainTitle();
   ActualizarSelectColumnas();
 });
 
+// --------------- //
+// elimina Columna //
+// --------------- //
 btnDelColumna.addEventListener("click", function() {
   let contBool = 0;
   if(boolTitleCols == true){
@@ -91,87 +169,23 @@ btnDelColumna.addEventListener("click", function() {
     contBool = 0;
   }
   // Eliminar una columna de la tabla
-  if (columnas > 2) {
+  if (columnas > 1) {
     for (var i = 0; i <= filas + contBool; i++) {
       if(i == 1){
         i = i + contBool;
       }
-      console.log(i);
       tblBody.rows[i].deleteCell(-1);
     }
     columnas--;
   }
-  AgregarTituloColumnas();
-  AgregarTituloColumnas();
+  aggMainTitle();
+  aggMainTitle();
   ActualizarSelectColumnas();
 });
 
-// Obtener la referencia del elemento div con la clase tabla__espaciotabla
-var div = document.querySelector(".tabla__espaciotabla");
-
-// Crear un elemento table y un elemento tbody
-var tabla = document.createElement("table");
-tabla.classList.add("table"); // Agregar la clase table de Bootstrap
-tabla.classList.add("tabla__tabla"); // Agregar la clase tabla__tabla para editar
-var tblBody = document.createElement("tbody");
-
-// Agregar una fila adicional al principio para mostrar las coordenadas de las columnas
-var hilera = document.createElement("tr");
-hilera.classList.add("coordenadas"); // Agregar una clase a la primera fila
-for (var j = 0; j <= columnas; j++) {
-  var celda = document.createElement("td");
-  celda.classList.add("coordenadas");
-  if (j === 0) {
-    var textoCelda = document.createTextNode("");
-  } else {
-    var textoCelda = document.createTextNode(String.fromCharCode(64 + j));
-  }
-  celda.appendChild(textoCelda);
-  hilera.appendChild(celda);
-}
-tblBody.appendChild(hilera);
-
-// Crear las filas y columnas de la tabla
-for (var i = 1; i <= filas; i++) {
-  var hilera = document.createElement("tr");
-
-  // Agregar una columna adicional al principio para mostrar las coordenadas de las filas
-  var celda = document.createElement("td");
-  celda.classList.add("coordenadas"); // Agregar una clase a la primera columna
-  celda.classList.add("coordenadas__fila"); // Agregar una clase a la primera columna
-  var textoCelda = document.createTextNode(i);
-  celda.appendChild(textoCelda);
-  hilera.appendChild(celda);
-
-  for (var j = 1; j <= columnas; j++) {
-    var celda = document.createElement("td");
-    var textarea = document.createElement("textarea"); // Crear un elemento textarea para cada celda
-    textarea.setAttribute("maxlength", "100");
-    textarea.setAttribute("oninput", "autoResize(this)");
-    textarea.classList.add("input-ajustada");
-    textarea.classList.add("celdaClickNull");
-    celda.classList.add("padre");
-    celda.appendChild(textarea);
-    hilera.appendChild(celda);
-  }
-
-  tblBody.appendChild(hilera);
-}
-
-tabla.appendChild(tblBody);
-ActualizarSelectFilas();
-ActualizarSelectColumnas();
-
-// Crear un elemento div para centrar la tabla
-var divCentrado = document.createElement("div");
-divCentrado.classList.add("d-flex", "justify-content-center"); // Agregar clases de Bootstrap para centrar la tabla
-divCentrado.appendChild(tabla);
-
-div.appendChild(divCentrado);
-
-  // ------------------- //
-  // SECCION DE SUBFILAS //
-  // ------------------- //
+// ---------------- //
+// AGREGAR SUBFILAS //
+// ---------------- //
     //funcion de hacer subfilas en columna A
     function agregarSubfila() {
       let contBool = 0;
@@ -312,7 +326,10 @@ div.appendChild(divCentrado);
         }
       }
     });
-    // -------------------------- //
+
+// ---------------- //
+// ELIMINA SUBFILAS //
+// ---------------- //
     //funcion de eliminar subfilas en columna A
     function eliminarSubfila() {
       let contBool = 0;
@@ -366,8 +383,6 @@ div.appendChild(divCentrado);
     //eliminar subfilas completas
     // Agregar un controlador de eventos al botón para que llame a la función eliminarSubfilaCompleta cuando se presione el botón
     document.querySelector(".del-subfila").addEventListener("click", eliminarSubfilaCompleta);
-    
-
     function eliminarSubfilaCompleta() {
       let contBool = 0;
       if(boolTitleCols == true){
@@ -411,9 +426,9 @@ div.appendChild(divCentrado);
     }
 
     
-  // ---------------------- //
-  // SECCION DE SUBCOLUMNAS //
-  // ---------------------- //
+  // ------------------- //
+  // AGREGAR SUBCOLUMNAS //
+  // ------------------- //
   function agregarSubcolumna(col) {
     let contBool = 0;
     if(boolTitleCols == true){
@@ -563,8 +578,11 @@ div.appendChild(divCentrado);
       recorridoSubcolumnas(columna);
     }
   });
+  
+// -------------------- //
+// ELIMINAR SUBCOLUMNAS //
+// -------------------- //
 
-  // -------------------------- //
   //eliminar subcolumnas completas
   document.querySelector(".del-subcolumna").addEventListener("click", function() {
     // Obtener el valor del campo de entrada
@@ -703,7 +721,6 @@ div.appendChild(divCentrado);
     option.value = 0;
     option.text = "";
     selector.appendChild(option);
-    
     // agregar las opciones de filas al select
     for (var i = 1 ; i <= columnas; i++) {
       let option = document.createElement("option");
@@ -713,68 +730,10 @@ div.appendChild(divCentrado);
     }
   }
 
-  // --------------------------------------- //
-  //  Funcion de titles de filas y columnas  //
-  // --------------------------------------- //
-  // COLUMNAS //
-
-  var CambioTituloColumna = false;
-  function TitleColumna() {
-    let contBool = 0;
-      if(boolTitleCols == true){
-        contBool = 1;
-      }
-      else{
-        contBool = 0;
-      }
-    if (!CambioTituloColumna){
-      CambioTituloColumna = true;
-      
-      // Recorrer cada celda de la columna 1
-      for (var i = 1 + contBool; i <= filas + contBool; i++) {
-        let celda = tblBody.rows[i].cells[1];
-        let textarea = celda.querySelector('.celdaClickNull');
-        celda.style.background = 'lightgray';
-        textarea.style.background = 'lightgray';
-        textarea.style.color = "blue";
-
-        // Verificar si ya existe una tabla anidada en la celda
-        let tablaAnidada = celda.querySelector("table");
-        if (tablaAnidada) {
-          // Si ya existe una tabla anidada, cambiar los textarea del interior de la tabla
-          let textareasAnidados = tablaAnidada.querySelectorAll(".celdaClickNull");
-          textareasAnidados.forEach(function(textarea) {
-            textarea.style.background = 'lightgray';
-            textarea.style.color = "blue";
-          });
-        }
-      }
-    }
-    else if(CambioTituloColumna){
-      CambioTituloColumna = false;
-      // Recorrer cada celda de la columna 1
-      for (var i = 1 + contBool; i <= filas + contBool; i++) {
-        let celda = tblBody.rows[i].cells[1];
-        let textarea = celda.querySelector('.celdaClickNull');
-        celda.style.background = 'white';
-        textarea.style.background = 'white';
-        textarea.style.color = "black";
-
-        // Verificar si ya existe una tabla anidada en la celda
-        let tablaAnidada = celda.querySelector("table");
-        if (tablaAnidada) {
-          // Si ya existe una tabla anidada, cambiar los textarea del interior de la tabla
-          let textareasAnidados = tablaAnidada.querySelectorAll(".celdaClickNull");
-          textareasAnidados.forEach(function(textarea) {
-            textarea.style.background = 'white';
-            textarea.style.color = "black";
-          });
-        }
-      }
-    }
-  }
-
-  function AgregarTituloColumnas() {
+  // ----------------------- //
+  //  Funcion de main title  //
+  // ----------------------- //
+  function aggMainTitle() {
     
     if (filas < 100 && boolTitleCols == false) {
       boolTitleCols = true;
@@ -795,7 +754,7 @@ div.appendChild(divCentrado);
           textarea.setAttribute("maxlength", "100");
           textarea.setAttribute("oninput", "autoResize(this)");
           textarea.classList.add("input-ajustada");
-          textarea.classList.add("celdaClickNull");
+          textarea.classList.add("celdaClickNull" , "MainTitle");
           celda.appendChild(textarea);  
           // Agregar la celda a la fila y la fila al cuerpo de la tabla
           hilera.appendChild(celda);
@@ -817,65 +776,4 @@ div.appendChild(divCentrado);
     }
     ActualizarSelectFilas();
   }
-  
-  
-
-  // FILAS //
-  var CambioTituloFila = false;
-  function TitleFila() {
-    // Recorrer cada celda de la fila 1
-    let contBool = 0;
-    if(boolTitleCols == true){
-      contBool = 1;
-    }
-    else{
-      contBool = 0;
-    }
-    let fila = tblBody.rows[1 + contBool];
-    if (!CambioTituloFila) {
-      CambioTituloFila = true;
-      for (var i = 1; i < fila.cells.length; i++) {
-        let celda = fila.cells[i];
-        let textarea = celda.querySelector('.celdaClickNull');
-        celda.style.background = 'lightgray';
-        textarea.style.background = 'lightgray';
-        textarea.style.color = "blue";
-  
-        // Verificar si ya existe una tabla anidada en la celda
-        let tablaAnidada = celda.querySelector("table");
-        if (tablaAnidada) {
-          // Si ya existe una tabla anidada, cambiar los textarea del interior de la tabla
-          let textareasAnidados = tablaAnidada.querySelectorAll(".celdaClickNull");
-          textareasAnidados.forEach(function(textarea) {
-            textarea.style.background = 'lightgray';
-            textarea.style.color = "blue";
-          });
-        }
-      }
-    } else if (CambioTituloFila) {
-      CambioTituloFila = false;
-      for (var i = 1; i < fila.cells.length; i++) {
-        let celda = fila.cells[i];
-        let textarea = celda.querySelector('.celdaClickNull');
-        celda.style.background = 'white';
-        textarea.style.background = 'white';
-        textarea.style.color = "black";
-  
-        // Verificar si ya existe una tabla anidada en la celda
-        let tablaAnidada = celda.querySelector("table");
-        if (tablaAnidada) {
-          // Si ya existe una tabla anidada, cambiar los textarea del interior de la tabla
-          let textareasAnidados = tablaAnidada.querySelectorAll(".celdaClickNull");
-          textareasAnidados.forEach(function(textarea) {
-            textarea.style.background = 'white';
-            textarea.style.color = "black";
-          });
-        }
-      }
-    }
-  }
-
-  
-
-  
   

@@ -3,7 +3,12 @@
 }
 
 .editar__Espaciado{
-    width: 14vw;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0rem 1rem 0rem 1rem;
+    width: 15.3vw;
+    border-radius: 0px 15px 15px 0px;
 }
 
 .editar__menuizq{
@@ -13,7 +18,7 @@
     background: var(--background-menu);
     height: 100vh;
     padding: 0rem 1rem 0rem 1rem;
-    width: 12vw;
+    width: 15.3vw;
     border-radius: 0px 15px 15px 0px;
 }
 
@@ -96,7 +101,8 @@
 .editar__plantilla__section{
    margin-left: 10px;
    background-color: var(--background-editor); 
-   width: 100%;
+   width: 83.655%;
+   height: auto;
    border-radius: 15px 0px 0px 15px;
    padding: 0rem 1rem 1rem 1rem;
 }

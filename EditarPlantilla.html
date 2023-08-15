@@ -20,8 +20,8 @@
     <body>
         
         <section class="editar__section">
-            <div class="editar__Espaciado"></div>
-            <section class="editar__menuizq">
+            <div class="editar__Espaciado col-4"></div>
+            <section class="editar__menuizq ">
                 <img src="./assets/img/🦆 icon _menu_.png" alt="toggle-menu" class="editar__menuicons">
                 <div class="editar__menuicons__bloque">
                     <a href="./index.html" class="editar__returnhome">
@@ -34,15 +34,6 @@
                     <h5 class="editar__titulo editar__tituloizq">Título ... </h2>
                     <p class="editar__menusecciones">Mis secciones</p>
 
-                    <div class="editar__menuicons__bloque">
-                        <img src="./assets/img/icon-tabla.png" alt="" class="editar__menuicons__plantilla editar__menuicons__bloque">
-                        <p class="editar__menunombre__bloque">Tabla </p>
-                    </div>
-
-                    <div class="editar__menuicons__bloque">
-                        <img src="./assets/img/icon-tabla.png" alt="" class="editar__menuicons__plantilla editar__menuicons__bloque">
-                        <p class="editar__menunombre__bloque">Tabla </p>
-                    </div>
                 </div>
 
                 <div class="menu__agregarplantilla">
@@ -51,7 +42,7 @@
                 </div>
             </section>
 
-            <section class="editar__plantilla__section">
+            <section class="editar__plantilla__section col-8">
                 <h5 class="editar__titulo">Título</h4>
                     <!-- Seccion de agregar seccion -->
                     <div class="menu__agregarplantilla plantilla__agregar">
@@ -184,13 +175,13 @@
                                 <button type="button" class="btn btn__config btn__filascolumnas btn__delFila">
                                     <img src="./assets/img/btn-up.png" alt="eliminar fila" class="btn__filasImg">
                                 </button>
-                                <button type="button" class="btn btn__config btn__filascolumnas btn__titleFila" onclick="TitleFila()">
+                                <button type="button" class="btn btn__config btn__filascolumnas btn__titleFila" onclick="TitleRows()">
                                     <img src="./assets/img/icon-title-colum.png" alt="hacer titulo las filas" class="btn__filasImg">
                                 </button>
                             </div>
 
                             <div class="tabla__controles__filas-columnas">
-                                <button type="button" class="btn btn__config btn__filascolumnas btn__barraFila" onclick="AgregarTituloColumnas()" >
+                                <button type="button" class="btn btn__config btn__filascolumnas btn__barraFila" onclick="aggMainTitle()" >
                                     <img src="./assets/img/btn-title.png" alt="Agregar barra fila" class="btn__filasImg">
                                 </button>
                             </div> 
@@ -235,26 +226,45 @@
                 <div class="card card__ConfPlantilla" id="card__ConfPlantilla">
                     <div class="card-body">
                         <h5 class="card-title">Agregación de sección</h5>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Selecciona el tipo de sección</option>
-                            <option value="1">Tabla</option>
-                            <option value="2">Texto</option>
-                            <option value="3">Pregunta abierta</option>
-                            <option value="4">Pregunta multiple</option>
-                        </select>
-                        <div class="editar__opciones__agregacion">
-                            <div class="row editar__agregaciones">
-                                
+                        <section style="display: flex; flex-direction: column; justify-content: space-around;width: 70%; height: 50%;">
+                            <div class="form-check">
+                                <input class="form-check-input Opt1" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Tabla
+                                </label>
                             </div>
-                        </div>
-                        <button type="button" class="btn btn-primary btn__plantilla" disabled>Agregar Sección</button>
+                            <div class="form-check">
+                                <input class="form-check-input Opt2" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Texto
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input Opt3" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+                                <label class="form-check-label" for="flexRadioDefault3">
+                                    Pregunta abierta
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input Opt4" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
+                                <label class="form-check-label" for="flexRadioDefault4">
+                                    Pregunta multiple
+                                </label>
+                            </div>
+                        </section>
+                        <button type="button" class="btn btn-primary btn__plantilla">Agregar Sección</button>
                     </div>
                 </div>
             </section>
         </section>
 
-        <script src="./js/editar-plantilla.js"></script>
+        <script src="./js/Secciones/Tabla/TitleColumn.js"></script>
+        <script src="./js/Secciones/Tabla/titleRows.js"></script>
         <script src="./js/Secciones/Tabla/generar-tabla.js"></script>
         <script src="./js/Secciones/Tabla/nulls-tabla.js"></script>
+        <script src="./js/Editar Plantilla/left-menu.js"></script>
+        <script src="./js/Editar Plantilla/agg-Seccion.js"></script>
+        <script src="./js/Editar Plantilla/open-seccion.js"></script>
+        
     </body>
 </html>
