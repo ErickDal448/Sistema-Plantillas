@@ -777,3 +777,4 @@ btnDelColumna.addEventListener("click", function() {
     ActualizarSelectFilas();
   }
   
+

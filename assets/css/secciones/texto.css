@@ -17,6 +17,11 @@
 
 .texto__caja{
     width: 80%;
+    height: 50vh;
+    padding: 0.5rem;
     border-radius: 15px;
-    color: var(--background-objetos);
+    background-color: var(--background-objetos);
+    box-shadow:  10px 15px 2px 1px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2.5rem;
+    margin-top: 2rem;
 }

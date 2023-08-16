@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <link rel="stylesheet" href="./assets/css/global.css">
         <link rel="stylesheet" href="./assets/css/EditarPlantilla.css">
@@ -54,8 +55,36 @@
                         <h5 class="texto__titulo">Texto 1</h5>
                         <div class="texto__parrafos">
                             <p class="texto__numparrafo">Parrafo 1</p>
+                            <section style="display: flex; justify-content: center;">
+                                <div class="tabla__controles__filas-columnas">
+                                    <button type="button" class="btn btn__config btn__filascolumnas btn__AplicarFiltros">
+                                        <img src="./assets/img/btn-title.png" alt="Aplicar Filtros" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__filascolumnas btn__InfoFiltros" data-bs-toggle="popover" data-bs-title="para aplicar estilos a tu texto puedes usar" data-bs-content="#titulo Azul#, ##Titulo negro##, **negritas**, °°Texto Pequeño°°, -Hacer lista-, <r>color rojo</r>, <c>Texto centrado</c>, <j>Texto justificado</j>, ...">
+                                        <img src="./assets/img/icon-info.png" alt="Info de filtros" class="btn__filasImg">
+                                    </button>
+                                </div>
+                            </section>
+                                
                             <div class="texto__textareadiv">
-                                <textarea placeholder="Ingrese el texto aqui" class="texto__caja" rows="15"></textarea>
+                                
+                                <div id="myDiv" contenteditable="true" class="texto__caja">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; flex-wrap:wr;">
+                            <div class="tabla__controles__filas-columnas">
+                                <label for="image" class="btn btn__config btn__filascolumnas">
+                                  <img src="./assets/img/icon-evidence.png" alt="Adjuntar Evidencia/Imagen" class="btn__filasImg">
+                                </label>
+                                <input id="image" type="file" style="display:none;"/>
+                            </div>
+                            <div class="tabla__controles__filas-columnas">
+                                <label for="image" class="btn btn__config btn__filascolumnas">
+                                  <img src="./assets/img/icon-download.png" alt="Adjuntar Evidencia/Imagen" class="btn__filasImg">
+                                </label>
+                                <input id="image" type="file" style="display:none;"/>
                             </div>
                         </div>
                     </div>
@@ -74,6 +103,20 @@
                                     <input type="number" class="form-control">
                                 </div>
                             </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; flex-wrap:wr;">
+                            <div class="tabla__controles__filas-columnas">
+                                <label for="image" class="btn btn__config btn__filascolumnas">
+                                  <img src="./assets/img/icon-evidence.png" alt="Adjuntar Evidencia/Imagen" class="btn__filasImg">
+                                </label>
+                                <input id="image" type="file" style="display:none;"/>
+                            </div>
+                            <div class="tabla__controles__filas-columnas">
+                                <label for="image" class="btn btn__config btn__filascolumnas">
+                                  <img src="./assets/img/icon-download.png" alt="Adjuntar Evidencia/Imagen" class="btn__filasImg">
+                                </label>
+                                <input id="image" type="file" style="display:none;"/>
+                              </div>
                         </div>
                     </div>
 
@@ -107,6 +150,20 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; flex-wrap:wr;">
+                            <div class="tabla__controles__filas-columnas">
+                                <label for="image" class="btn btn__config btn__filascolumnas">
+                                  <img src="./assets/img/icon-evidence.png" alt="Adjuntar Evidencia/Imagen" class="btn__filasImg">
+                                </label>
+                                <input id="image" type="file" style="display:none;"/>
+                            </div>
+                            <div class="tabla__controles__filas-columnas">
+                                <label for="image" class="btn btn__config btn__filascolumnas">
+                                  <img src="./assets/img/icon-download.png" alt="Adjuntar Evidencia/Imagen" class="btn__filasImg">
+                                </label>
+                                <input id="image" type="file" style="display:none;"/>
+                              </div>
                         </div>
                     </div>
 
@@ -258,13 +315,17 @@
             </section>
         </section>
 
+        <script src="./js/Secciones/Texto/Ingresar-Texto.js"></script>
+
         <script src="./js/Secciones/Tabla/TitleColumn.js"></script>
         <script src="./js/Secciones/Tabla/titleRows.js"></script>
         <script src="./js/Secciones/Tabla/generar-tabla.js"></script>
         <script src="./js/Secciones/Tabla/nulls-tabla.js"></script>
+
         <script src="./js/Editar Plantilla/left-menu.js"></script>
         <script src="./js/Editar Plantilla/agg-Seccion.js"></script>
         <script src="./js/Editar Plantilla/open-seccion.js"></script>
-        
+        <script src="./js/Editar Plantilla/poppers.js"></script>
+            
     </body>
 </html>
