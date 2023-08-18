@@ -51,17 +51,38 @@
                         <img src="./assets/img/Agg-Plantilla-menu.png" alt="agregar bloque" class="menu__agregarplantillaimg">
                     </div>
                     <!-- seccion de texto -->
-                    <div class="plantilla__texto">
+                    <div class="plantilla__texto" style="display: block;">
                         <h5 class="texto__titulo">Texto 1</h5>
                         <div class="texto__parrafos">
                             <p class="texto__numparrafo">Parrafo 1</p>
                             <section style="display: flex; justify-content: center;">
-                                <div class="tabla__controles__filas-columnas">
-                                    <button type="button" class="btn btn__config btn__filascolumnas btn__AplicarFiltros">
-                                        <img src="./assets/img/btn-title.png" alt="Aplicar Filtros" class="btn__filasImg">
-                                    </button>
-                                    <button type="button" class="btn btn__config btn__filascolumnas btn__InfoFiltros" data-bs-toggle="popover" data-bs-title="para aplicar estilos a tu texto puedes usar" data-bs-content="#titulo Azul#, ##Titulo negro##, **negritas**, °°Texto Pequeño°°, -Hacer lista-, <r>color rojo</r>, <c>Texto centrado</c>, <j>Texto justificado</j>, ...">
+                                <div class="texto__fondoControles">
+                                    <button type="button" class="btn btn__config btn__TextControler " data-bs-toggle="popover" data-bs-title="para aplicar estilos a tu texto" data-bs-content="Selecciona el texto a editar y posteriormente da click en una de nuestras opciones de edición.">
                                         <img src="./assets/img/icon-info.png" alt="Info de filtros" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-h1>
+                                        <img src="./assets/img/icon -h1 title.png" alt="Main title" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-h2>
+                                        <img src="./assets/img/icon-h2 title.png" alt="Second title" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler " data-btn-bold>
+                                        <img src="./assets/img/icon-bold.png" alt="Bold Text" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-size>
+                                        <img src="./assets/img/icon-text size.png" alt="Size Text" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-list>
+                                        <img src="./assets/img/icon-List.png" alt="Make a list" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-redFont>
+                                        <img src="./assets/img/icon-Redfont.png" alt="Red Text" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-center>
+                                        <img src="./assets/img/icon-align center.png" alt="Center Text" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler " data-btn-justify>
+                                        <img src="./assets/img/icon-text align justify.png" alt="Justify Text" class="btn__filasImg">
                                     </button>
                                 </div>
                             </section>

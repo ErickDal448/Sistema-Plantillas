@@ -10,6 +10,30 @@
     color: var(--background-objetos);
 }
 
+.texto__fondoControles{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--background-config);
+    padding: 0 1rem;
+    border-radius: 15px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn__TextControler{
+    background-color: var(--btn-add);
+    display: flex;
+    margin: .5rem;
+    justify-content: center;
+    align-items: center;
+    height: 2.75rem;
+    padding: 1.25rem 1rem;
+}
+
+.btn__TextControler:hover{
+    background: #a0c280;
+}
+
 .texto__textareadiv{
     display: flex;
     justify-content: center;
