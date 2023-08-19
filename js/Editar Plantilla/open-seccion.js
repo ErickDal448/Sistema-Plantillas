@@ -10,13 +10,13 @@ const DivPadre = document.querySelector(".editar__menuiconos__plantillas");
 
 DivPadre.addEventListener('click', (event) => {
   if (event.target.classList.contains('SecText')) {
-    toggleDisplay(SeccionText, elementsArray);
+    window.location.href = ('./EditarPlantilla-Texto.html');
   } else if (event.target.classList.contains('SecTable')) {
-    toggleDisplay(SeccionTable, elementsArray);
+    window.location.href = ('./EditarPlantilla-Tabla.html');
   } else if (event.target.classList.contains('SecOpenAsk')) {
-    toggleDisplay(SeccionOpenAsk, elementsArray);
+    window.location.href = ('./EditarPlantilla-PreguntaA.html');
   } else if (event.target.classList.contains('SecMultipleAsk')) {
-    toggleDisplay(SeccionMultipleAsk, elementsArray);
+    window.location.href = ('./EditarPlantilla-PreguntaM.html');
   }
 });
 
@@ -30,5 +30,5 @@ function toggleDisplay(selectedElement, elementsArray) {
         }
       });
     }
-  }
-  
+}
+

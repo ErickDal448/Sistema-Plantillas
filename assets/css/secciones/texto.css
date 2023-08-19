@@ -1,5 +1,5 @@
 .plantilla__texto{
-    display: none ;
+    display: block ;
 }
 
 .texto__titulo{
@@ -41,7 +41,8 @@
 
 .texto__caja{
     width: 80%;
-    height: 50vh;
+    min-height: 50vh;
+    height: auto;
     padding: 0.5rem;
     border-radius: 15px;
     background-color: var(--background-objetos);

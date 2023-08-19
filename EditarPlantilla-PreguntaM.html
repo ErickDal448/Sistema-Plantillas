@@ -45,12 +45,52 @@
 
             <section class="editar__plantilla__section col-8">
                 <h5 class="editar__titulo">Título</h4>
-                    <!-- Seccion de agregar seccion -->
-                    <div class="menu__agregarplantilla plantilla__agregar">
-                        <p class="menu__agregarplantillatxt"> Agregar sección</p>
-                        <img src="./assets/img/Agg-Plantilla-menu.png" alt="agregar bloque" class="menu__agregarplantillaimg">
+                    <!-- Seccion de pregunta opcion multiple -->
+                    <div class="plantilla__preguntaM">
+                        <h5 class="preguntaM__titulo">Pregunta Multiple 1</h5>
+                        <div class="preguntaM__preguntas">
+                            <p class="preguntaM__numpregunta">Pregunta 1</p>
+                            <div class="preguntaM__textareadiv">
+                                <textarea placeholder="Ingrese su pregunta aquí" class="preguntaM__caja" rows="10"></textarea>
+                            </div>
+                            <div class="preguntaM__respuestadiv">
+                                <div>
+                                    <label class="col-sm-12 col-form-label preguntaM__numrespuesta">Número de respuestas:</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preguntaM__respuestasdiv">
+                                <div class="preguntaM__opcionesdiv">
+                                    <label class="col-sm-7 col-form-label preguntaM__numrespuesta">Respuesta 1:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="preguntaM__opcionesdiv">
+                                    <label class="col-sm-7 col-form-label preguntaM__numrespuesta">Respuesta 2:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; flex-wrap:wr;">
+                            <div class="tabla__controles__filas-columnas">
+                                <label for="image" class="btn btn__config btn__filascolumnas">
+                                  <img src="./assets/img/icon-evidence.png" alt="Adjuntar Evidencia/Imagen" class="btn__filasImg">
+                                </label>
+                                <input id="image" type="file" style="display:none;"/>
+                            </div>
+                            <div class="tabla__controles__filas-columnas">
+                                <label for="image" class="btn btn__config btn__filascolumnas">
+                                  <img src="./assets/img/icon-download.png" alt="Adjuntar Evidencia/Imagen" class="btn__filasImg">
+                                </label>
+                                <input id="image" type="file" style="display:none;"/>
+                              </div>
+                        </div>
                     </div>
-                    
             </section>
         </section>
 

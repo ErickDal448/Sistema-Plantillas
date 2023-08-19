@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Editar-Plantilla-PreguntaAbierta</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="./assets/css/global.css">
+        <link rel="stylesheet" href="./assets/css/EditarPlantilla.css">
+        <link rel="stylesheet" href="./assets/css/secciones/texto.css">
+        <link rel="stylesheet" href="./assets/css/secciones/pregunta-abierta.css">
+        <link rel="stylesheet" href="./assets/css/secciones/pregunta-multiple.css">
+        <link rel="stylesheet" href="./assets/css/secciones/tabla.css">
+        <link rel="stylesheet" href="./assets/css/secciones/agg-seccion.css">
+    </head>
+    <body>
+        
+        <section class="editar__section">
+            <div class="editar__Espaciado col-4"></div>
+            <section class="editar__menuizq ">
+                <img src="./assets/img/🦆 icon _menu_.png" alt="toggle-menu" class="editar__menuicons">
+                <div class="editar__menuicons__bloque">
+                    <a href="./index.html" class="editar__returnhome">
+                        <img src="./assets/img/icon _home.png" alt="return-home" class="editar__menuicons editar__menuicons__bloque">
+                    </a>
+                    <p class="editar__menunombre__bloque">HOME</p>
+                </div>
+
+                <div class="editar__menuiconos__plantillas">
+                    <h5 class="editar__titulo editar__tituloizq">Título ... </h2>
+                    <p class="editar__menusecciones">Mis secciones</p>
+
+                </div>
+
+                <div class="menu__agregarplantilla">
+                    <p class="menu__agregarplantillatxt menu__agglateraltxt"> Agregar sección</p>
+                    <img src="./assets/img/Agg-Plantilla-menu.png" alt="agregar bloque" class="menu__agregarplantillaimg menu__agglateral">
+                </div>
+            </section>
+
+            <section class="editar__plantilla__section col-8">
+                <h5 class="editar__titulo">Título</h4>
+                    
+                    <!-- Seccion de pregunta abierta -->
+                    <div class="plantilla__preguntaA" style="display: block;">
+                        <h5 class="preguntaA__titulo">Pregunta Abierta 1</h5>
+                        <div class="preguntaA__preguntas">
+                            <p class="preguntaA__numpregunta">Pregunta 1</p>
+
+                            <section style="display: flex; justify-content: center;">
+                                <div class="texto__fondoControles">
+                                    <button type="button" class="btn btn__config btn__TextControler " data-bs-toggle="popover" data-bs-title="para aplicar estilos a tu texto" data-bs-content="Selecciona el texto a editar y posteriormente da click en una de nuestras opciones de edición.">
+                                        <img src="./assets/img/icon-info.png" alt="Info de filtros" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-h1>
+                                        <img src="./assets/img/icon -h1 title.png" alt="Main title" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-h2>
+                                        <img src="./assets/img/icon-h2 title.png" alt="Second title" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler " data-btn-bold>
+                                        <img src="./assets/img/icon-bold.png" alt="Bold Text" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-size>
+                                        <img src="./assets/img/icon-text size.png" alt="Size Text" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-list>
+                                        <img src="./assets/img/icon-List.png" alt="Make a list" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-redFont>
+                                        <img src="./assets/img/icon-Redfont.png" alt="Red Text" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-center>
+                                        <img src="./assets/img/icon-align center.png" alt="Center Text" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler " data-btn-justify>
+                                        <img src="./assets/img/icon-text align justify.png" alt="Justify Text" class="btn__filasImg">
+                                    </button>
+                                </div>
+                            </section>
+
+                            <section style="display: flex; justify-content: center;">
+                                <div contenteditable="true" class="PreguntaA__caja">
+                                    
+                                </div>
+                            </section>
+                            
+                            <div class="preguntaA__respuestadiv">
+                                <div style="display: flex; align-items: center;">
+                                    <label class="col-sm-5 col-form-label preguntaA__numrespuesta">Espaciado:</label>
+                                </div>
+                                <div class="col-sm-1" style="display: flex; align-items: center;">
+                                    <input type="number" class="form-control input-Space">
+                                </div>
+                                <div class="form-check" style="display: flex; align-items: flex-start; margin-left: 15px; flex-direction: column;">
+                                    <div>
+                                        <input class="form-check-input in__Recuadro" type="radio" name="RadioRespuesta">
+                                        <label class="form-check-label" style="color: white;">
+                                            Recuadro
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input class="form-check-input in__Renglones" type="radio" name="RadioRespuesta" checked>
+                                        <label class="form-check-label" style="color: white;" >
+                                            Renglones
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <section style="display: flex; justify-content: center;">
+                                <div class="texto__fondoControles">
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-checkSpace>
+                                        <img src="./assets/img/icon-done.png" alt="done" class="btn__filasImg">
+                                    </button>
+                                </div>
+                            </section>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; flex-wrap:wr;">
+                            <div class="tabla__controles__filas-columnas">
+                                <label for="image" class="btn btn__config btn__filascolumnas">
+                                  <img src="./assets/img/icon-evidence.png" alt="Adjuntar Evidencia/Imagen" class="btn__filasImg">
+                                </label>
+                                <input id="image" type="file" style="display:none;"/>
+                            </div>
+                            <div class="tabla__controles__filas-columnas">
+                                <label for="image" class="btn btn__config btn__filascolumnas">
+                                  <img src="./assets/img/icon-download.png" alt="Adjuntar Evidencia/Imagen" class="btn__filasImg">
+                                </label>
+                                <input id="image" type="file" style="display:none;"/>
+                              </div>
+                        </div>
+                    </div>
+            </section>
+        </section>
+
+        <section class="editar__section__agregar">
+            <section class="editar__secMenuPlantilla"  id="editar__MenuCrear">
+                <div class="card card__ConfPlantilla" id="card__ConfPlantilla">
+                    <div class="card-body">
+                        <h5 class="card-title">Agregación de sección</h5>
+                        <section style="display: flex; flex-direction: column; justify-content: space-around;width: 70%; height: 50%;">
+                            <div class="form-check">
+                                <input class="form-check-input Opt1 inputSection" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Tabla
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input Opt2 inputSection" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Texto
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input Opt3 inputSection" type="radio" name="flexRadioDefault" id="flexRadioDefault3" >
+                                <label class="form-check-label" for="flexRadioDefault3">
+                                    Pregunta abierta
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input Opt4 inputSection" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                                <label class="form-check-label" for="flexRadioDefault4">
+                                    Pregunta multiple
+                                </label>
+                            </div>
+                        </section>
+                        <button type="button" class="btn btn-primary btn__plantilla">Agregar Sección</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <script src="./js/Secciones/Preg-Abierta/spacer.js"></script>
+
+        <script src="./js/Secciones/Texto/Edicion-Texto/Bold.js"></script>
+        <script src="./js/Secciones/Texto/Edicion-Texto/center.js"></script>
+        <script src="./js/Secciones/Texto/Edicion-Texto/H1.js"></script>
+        <script src="./js/Secciones/Texto/Edicion-Texto/H2.js"></script>
+        <script src="./js/Secciones/Texto/Edicion-Texto/justify.js"></script>
+        <script src="./js/Secciones/Texto/Edicion-Texto/List.js"></script>
+        <script src="./js/Secciones/Texto/Edicion-Texto/RedFont.js"></script>
+        <script src="./js/Secciones/Texto/Edicion-Texto/Size.js"></script>
+
+        <script src="./js/Editar Plantilla/left-menu.js"></script>
+        <script src="./js/Editar Plantilla/agg-Seccion.js"></script>
+        <script src="./js/Editar Plantilla/open-seccion.js"></script>
+        <script src="./js/Editar Plantilla/poppers.js"></script>
+            
+    </body>
+</html>

@@ -32,7 +32,7 @@
 
 
 // agregar la plantilla seleccionada en el menu lateral
-const radioButtons = document.querySelectorAll('.form-check-input');
+const radioButtons = document.querySelectorAll('.inputSection');
 const addButton = document.querySelector('.btn__plantilla');
 const menuIconos = document.querySelector('.editar__menuiconos__plantillas');
 
@@ -65,12 +65,18 @@ addButton.addEventListener('click', () => {
     img.alt = 'Tabla';
     img.classList.add("SecTable");
     p.classList.add("SecTable");
+    bloque.appendChild(img);
+    bloque.appendChild(p);
+    menuIconos.appendChild(bloque);
   } else if (opt2.checked === true) {
     img.src = './assets/img/icon-text.png';
     p.textContent = 'Texto';
     img.alt = 'Texto';
     img.classList.add("SecText");
     p.classList.add("SecText");
+    bloque.appendChild(img);
+    bloque.appendChild(p);
+    menuIconos.appendChild(bloque);
   } else if (opt3.checked === true) {
     console.log("tabla");
     img.src = './assets/img/icon-openAsk.png';
@@ -78,14 +84,18 @@ addButton.addEventListener('click', () => {
     img.alt = 'Pregunta abierta';
     img.classList.add("SecOpenAsk");
     p.classList.add("SecOpenAsk");
+    bloque.appendChild(img);
+    bloque.appendChild(p);
+    menuIconos.appendChild(bloque);
   } else if (opt4.checked === true) {
     img.src = './assets/img/icon-multipleAsk.png';
     p.textContent = 'Pregunta multiple';
     img.alt = 'Pregunta multiple';
     img.classList.add("SecMultipleAsk");
     p.classList.add("SecMultipleAsk");
+    bloque.appendChild(img);
+    bloque.appendChild(p);
+    menuIconos.appendChild(bloque);
   }
-  bloque.appendChild(img);
-  bloque.appendChild(p);
-  menuIconos.appendChild(bloque);
+  
 });
