@@ -10,9 +10,15 @@
     color: var(--background-objetos);
 }
 
-.preguntaM__textareadiv{
-    display: flex;
-    justify-content: center;
+.PreguntaM__caja{
+    width: 80%;
+    min-height: 50vh;
+    height: auto;
+    padding: 0.5rem;
+    border-radius: 15px;
+    background-color: var(--background-objetos);
+    box-shadow:  10px 15px 2px 1px rgba(0, 0, 0, 0.2);
+    margin-top: 2rem;
 }
 
 .preguntaM__caja{

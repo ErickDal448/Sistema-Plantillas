@@ -97,5 +97,4 @@ addButton.addEventListener('click', () => {
     bloque.appendChild(p);
     menuIconos.appendChild(bloque);
   }
-  
 });

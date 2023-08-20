@@ -50,31 +50,69 @@
                         <h5 class="preguntaM__titulo">Pregunta Multiple 1</h5>
                         <div class="preguntaM__preguntas">
                             <p class="preguntaM__numpregunta">Pregunta 1</p>
-                            <div class="preguntaM__textareadiv">
-                                <textarea placeholder="Ingrese su pregunta aquí" class="preguntaM__caja" rows="10"></textarea>
-                            </div>
+                            <section style="display: flex; justify-content: center;">
+                                <div class="texto__fondoControles">
+                                    <button type="button" class="btn btn__config btn__TextControler " data-bs-toggle="popover" data-bs-title="para aplicar estilos a tu texto" data-bs-content="Selecciona el texto a editar y posteriormente da click en una de nuestras opciones de edición.">
+                                        <img src="./assets/img/icon-info.png" alt="Info de filtros" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-h1>
+                                        <img src="./assets/img/icon -h1 title.png" alt="Main title" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-h2>
+                                        <img src="./assets/img/icon-h2 title.png" alt="Second title" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler " data-btn-bold>
+                                        <img src="./assets/img/icon-bold.png" alt="Bold Text" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-size>
+                                        <img src="./assets/img/icon-text size.png" alt="Size Text" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-list>
+                                        <img src="./assets/img/icon-List.png" alt="Make a list" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-redFont>
+                                        <img src="./assets/img/icon-Redfont.png" alt="Red Text" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler" data-btn-center>
+                                        <img src="./assets/img/icon-align center.png" alt="Center Text" class="btn__filasImg">
+                                    </button>
+                                    <button type="button" class="btn btn__config btn__TextControler " data-btn-justify>
+                                        <img src="./assets/img/icon-text align justify.png" alt="Justify Text" class="btn__filasImg">
+                                    </button>
+                                </div>
+                            </section>
+
+                            <section style="display: flex; justify-content: center;">
+                                <div contenteditable="true" class="PreguntaM__caja">
+                                    
+                                </div>
+                            </section>
                             <div class="preguntaM__respuestadiv">
-                                <div>
-                                    <label class="col-sm-12 col-form-label preguntaM__numrespuesta">Número de respuestas:</label>
-                                    <div class="col-sm-10">
-                                        <input type="number" class="form-control">
-                                    </div>
+                                <div style="display: flex;
+                                flex-direction: column;
+                                align-items: center;">
+                                    <label class="col-sm-10 col-form-label preguntaM__numrespuesta" style="text-align: center">Número de respuestas:</label>
+                                    <section style="    display: flex;
+                                    align-items: center;
+                                    justify-content: space-around;
+                                    flex-wrap: wrap;
+                                    flex-direction: row;">
+                                        <div class="col-sm-5">
+                                            <input id="num-respuestas" type="number" class="form-control">
+                                        </div>
+                                        <section style="display: flex; justify-content: center;">
+                                            <div class="texto__fondoControles">
+                                                <button type="button" class="btn btn__config btn__TextControler" data-btn-checkSpace>
+                                                    <img src="./assets/img/icon-done.png" alt="done" class="btn__filasImg">
+                                                </button>
+                                            </div>
+                                        </section>
+                                    </section>
+                                    
                                 </div>
                             </div>
-                            <div class="preguntaM__respuestasdiv">
-                                <div class="preguntaM__opcionesdiv">
-                                    <label class="col-sm-7 col-form-label preguntaM__numrespuesta">Respuesta 1:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="preguntaM__opcionesdiv">
-                                    <label class="col-sm-7 col-form-label preguntaM__numrespuesta">Respuesta 2:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
+                            
+                            
                         </div>
                         <div style="display: flex; justify-content: space-between; flex-wrap:wr;">
                             <div class="tabla__controles__filas-columnas">
@@ -107,19 +145,19 @@
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input Opt2" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                <input class="form-check-input Opt2" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Texto
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input Opt3" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+                                <input class="form-check-input Opt3" type="radio" name="flexRadioDefault" id="flexRadioDefault3" >
                                 <label class="form-check-label" for="flexRadioDefault3">
                                     Pregunta abierta
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input Opt4" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
+                                <input class="form-check-input Opt4" type="radio" name="flexRadioDefault" id="flexRadioDefault4" >
                                 <label class="form-check-label" for="flexRadioDefault4">
                                     Pregunta multiple
                                 </label>
@@ -131,7 +169,7 @@
             </section>
         </section>
 
-        <script src="./js/Secciones/Texto/Ingresar-Texto.js"></script>
+        <script src="./js/Secciones/Preg-Mult/Generar-Respuestas.js"></script>
 
         <script src="./js/Secciones/Texto/Edicion-Texto/Bold.js"></script>
         <script src="./js/Secciones/Texto/Edicion-Texto/center.js"></script>
@@ -141,11 +179,6 @@
         <script src="./js/Secciones/Texto/Edicion-Texto/List.js"></script>
         <script src="./js/Secciones/Texto/Edicion-Texto/RedFont.js"></script>
         <script src="./js/Secciones/Texto/Edicion-Texto/Size.js"></script>
-
-        <script src="./js/Secciones/Tabla/TitleColumn.js"></script>
-        <script src="./js/Secciones/Tabla/titleRows.js"></script>
-        <script src="./js/Secciones/Tabla/generar-tabla.js"></script>
-        <script src="./js/Secciones/Tabla/nulls-tabla.js"></script>
 
         <script src="./js/Editar Plantilla/left-menu.js"></script>
         <script src="./js/Editar Plantilla/agg-Seccion.js"></script>
