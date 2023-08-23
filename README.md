@@ -31,9 +31,11 @@ Este sistema está hecho para poder crear y guardar plantillas de documentos PDF
 
 - - - **3.4.3: Titulos.** Se puede poner un formato de titulo en las columnas o las subcolumnas, esto mediante los botones que se tienen para agregar las columnas o las filas respectivamente, este formato cambia el fondo del recuadro ademas del color del texto.
 
-- - - **3.4.4: Titulo central** Este boton genera un titulo central de la tabla, de manera que se pone hasta arriba de las columnas.
+- - - **3.4.4: Titulo central.** Este boton genera un titulo central de la tabla, de manera que se pone hasta arriba de las columnas.
 
-- - - **3.4.5: Nulls.** Con la opción de poner campos en null (teniendo el recuadro en negro) esto se logra manteniendo pulsado el recuadro unos segundos y para revertir el null de misma manera se mantiene pulsado (regresando el recuadro a su estado original).
+- - - **3.4.5: Quitar Columnas.** Esta opción es mediante el click derecho en el espacio de las filas, con la opción de quitar columnas, generando asi una sola celda en la fila.
+
+- - - **3.4.6: Nulls.** Con la opción de poner campos en null (teniendo el recuadro en negro) esto se logra manteniendo pulsado el recuadro unos segundos y para revertir el null de misma manera se mantiene pulsado (regresando el recuadro a su estado original).
 ---
 - **4: Agregar evidencias**
 Al final de cada tipo de formato se pueden agregar imagenes mediante un botón.

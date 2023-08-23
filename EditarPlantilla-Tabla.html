@@ -116,7 +116,7 @@
                             </div>
 
                             <div class="tabla__controles__filas-columnas">
-                                <button type="button" class="btn btn__config btn__filascolumnas btn__barraFila" onclick="aggMainTitle()" >
+                                <button type="button" class="btn btn__config btn__filascolumnas btn__barraFila" onclick="aggMainTitle(0)" >
                                     <img src="./assets/img/btn-title.png" alt="Agregar barra fila" class="btn__filasImg">
                                 </button>
                             </div> 
@@ -133,7 +133,10 @@
                                 </button>
                             </div>  
                         </div>
-
+                        <ul id="contextMenu" class="context-menu">
+                            <li class="TitleFormation">Quitar Columnas</li>
+                            <li class="changeFont">Cambiar estilo</li>
+                        </ul>
                         <div class="tabla__espaciotabla">
                             <!--Area editable en el archivo js de generar-tabla.js-->
                         </div>
@@ -193,16 +196,16 @@
             </section>
         </section>
 
-        <script src="./js/Secciones/Texto/Ingresar-Texto.js"></script>
+        <!-- <script src="./js/Secciones/Texto/Ingresar-Texto.js"></script> -->
 
-        <script src="./js/Secciones/Texto/Edicion-Texto/Bold.js"></script>
+        <!-- <script src="./js/Secciones/Texto/Edicion-Texto/Bold.js"></script>
         <script src="./js/Secciones/Texto/Edicion-Texto/center.js"></script>
         <script src="./js/Secciones/Texto/Edicion-Texto/H1.js"></script>
         <script src="./js/Secciones/Texto/Edicion-Texto/H2.js"></script>
         <script src="./js/Secciones/Texto/Edicion-Texto/justify.js"></script>
         <script src="./js/Secciones/Texto/Edicion-Texto/List.js"></script>
         <script src="./js/Secciones/Texto/Edicion-Texto/RedFont.js"></script>
-        <script src="./js/Secciones/Texto/Edicion-Texto/Size.js"></script>
+        <script src="./js/Secciones/Texto/Edicion-Texto/Size.js"></script> -->
 
         <script src="./js/Secciones/Tabla/TitleColumn.js"></script>
         <script src="./js/Secciones/Tabla/titleRows.js"></script>

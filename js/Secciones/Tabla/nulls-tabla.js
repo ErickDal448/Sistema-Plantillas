@@ -25,15 +25,18 @@ tablaPadre.addEventListener("mouseup", function(e) {
     if (tiempoFin - tiempoInicio > 200) {
       // Cambiar el estilo del textarea correspondiente
       let textarea = e.target;
+      let parentElement = textarea.parentNode;
       if (textarea.style.backgroundColor === "black") {
         textarea.style.backgroundColor = "white";
         textarea.value = "";
         textarea.readOnly = false;
+        parentElement.style.backgroundColor = "white";
       } else {
         textarea.style.backgroundColor = "black";
         textarea.value = null;
         textarea.style.height = "100%";
         textarea.readOnly = true;
+        parentElement.style.backgroundColor = "black";
       }
     }
   }
@@ -61,15 +64,18 @@ tablaPadre.addEventListener("touchend", function(e) {
     if (tiempoFin - tiempoInicio > 200) {
       // Cambiar el estilo del textarea correspondiente
       let textarea = e.target;
+      let parentElement = textarea.parentNode;
       if (textarea.style.backgroundColor === "black") {
         textarea.style.backgroundColor = "white";
         textarea.value = "";
         textarea.readOnly = false;
+        parentElement.style.backgroundColor = "white";
       } else {
         textarea.style.backgroundColor = "black";
         textarea.value = null;
         textarea.style.height = "100%";
         textarea.readOnly = true;
+        parentElement.style.backgroundColor = "black";
       }
     }
   }

@@ -84,14 +84,14 @@ var btnDelColumna = document.querySelector(".btn__delColumna");
 // ------------- //
 // Agregar Filas //
 // ------------- //
-btnAggFila.addEventListener("click", function() {
+function AggFila () {
   // Agregar una fila a la tabla
   if (filas < 100) {
     var hilera = tblBody.insertRow();
     for (var j = 0; j <= columnas; j++) {
       var celda = hilera.insertCell();
       if (j === 0) {
-        celda.classList.add("coordenadas");
+        celda.classList.add("coordenadas", "coordenadas__fila");
         var textoCelda = document.createTextNode(++filas);
         celda.appendChild(textoCelda);
       } else {
@@ -106,7 +106,8 @@ btnAggFila.addEventListener("click", function() {
     }
   }
   ActualizarSelectFilas();
-});
+}
+btnAggFila.addEventListener("click", AggFila);
 
 // -------------- //
 // Eliminar Filas //
@@ -685,7 +686,7 @@ btnDelColumna.addEventListener("click", function() {
   function ActualizarSelectFilas(){
     var TitleCont = 0;
     // Seleccionar el elemento 
-    let selector = document.querySelector(".form-subfila1");
+    const selector = document.querySelector(".form-subfila1");
     selector.innerHTML = "";
     let option = document.createElement("option");
     option.value = 0;
@@ -733,48 +734,184 @@ btnDelColumna.addEventListener("click", function() {
   // ----------------------- //
   //  Funcion de main title  //
   // ----------------------- //
-  function aggMainTitle() {
-    
-    if (filas < 100 && boolTitleCols == false) {
-      boolTitleCols = true;
-      var hilera = document.createElement("tr");
-      for (var j = 0; j <= 1; j++) {
-        var celda = document.createElement("td");
-        if (j === 0) {
-          celda.classList.add("coordenadas");
-          var textoCelda = document.createTextNode("T");
-          celda.appendChild(textoCelda);
-          hilera.appendChild(celda);
-        } else {
-          // Establecer el atributo colspan de la celda en el número de columnas de la tabla
-          celda.setAttribute("colspan", columnas + 1);
-        
-          // Crear un nuevo textarea y agregarlo a la celda
-          var textarea = document.createElement("textarea");
-          textarea.setAttribute("maxlength", "100");
-          textarea.setAttribute("oninput", "autoResize(this)");
-          textarea.classList.add("input-ajustada");
-          textarea.classList.add("celdaClickNull" , "MainTitle");
-          celda.appendChild(textarea);  
-          // Agregar la celda a la fila y la fila al cuerpo de la tabla
-          hilera.appendChild(celda);
-          tblBody.insertBefore(hilera, tblBody.rows[1]);
+  function aggMainTitle(evento) {
+    if(evento !== 0){
+      let contBool = 0;
+      if(boolTitleCols == true){
+        contBool = 1;
+      }
+      else{
+        contBool = 0;
+      }
+      evento.value = evento.textContent;
+      if (filas < 100 && !evento.classList.contains("coordenadas__T")) {
+        var hilera = document.createElement("tr");
+        for (var j = 0; j <= 1; j++) {
+          var celda = document.createElement("td");
+          if (j === 0) {
+            celda.classList.add("coordenadas", "coordenadas__fila", "coordenadas__T");
+            var textoCelda = document.createTextNode(evento.value);
+            celda.appendChild(textoCelda);
+            hilera.appendChild(celda);
+          } else {
+            // Establecer el atributo colspan de la celda en el número de columnas de la tabla
+            celda.setAttribute("colspan", columnas + 1);
+          
+            // Crear un nuevo textarea y agregarlo a la celda
+            var textarea = document.createElement("textarea");
+            textarea.setAttribute("maxlength", "100");
+            textarea.setAttribute("oninput", "autoResize(this)");
+            textarea.classList.add("input-ajustada");
+            textarea.classList.add("celdaClickNull" , "MainTitle");
+            celda.appendChild(textarea);  
+            // Agregar la celda a la fila y la fila al cuerpo de la tabla
+            let spot = parseInt(evento.value) + contBool;
+            hilera.appendChild(celda);
+            tblBody.deleteRow(spot);
+            tblBody.insertBefore(hilera, tblBody.rows[spot]);
+          }
         }
       }
-    }
-    else if (filas < 100 && boolTitleCols == true){
-      // Funcion de eliminacion de titulo
-      // Obtener la fila que contiene la celda del título
-      var fila = tblBody.rows[1];
+      else if (filas < 100 && evento.classList.contains("coordenadas__T")){
+        // Funcion de eliminacion de titulo
+        // Obtener la fila que contiene la celda del título
+        let spot = parseInt(evento.value) + contBool;
+        var fila = tblBody.rows[spot];
 
-      // Verificar si la fila existe y si contiene la celda del título
-      if (fila && fila.cells.length > 1) {
-        // Eliminar la fila que contiene la celda del título
-        tblBody.removeChild(fila);
-        boolTitleCols = false;
+        // Verificar si la fila existe y si contiene la celda del título
+        if ((fila && fila.cells.length > 1) && evento.classList.contains("coordenadas__T")) {
+          // Eliminar la fila que contiene la celda del título
+          tblBody.deleteRow(spot);
+
+            // Agregar una fila a la tabla
+              var hilera = tblBody.insertRow(spot);
+              for (var j = 0; j <= columnas; j++) {
+                var celda = hilera.insertCell();
+                if (j === 0) {
+                  celda.classList.add("coordenadas", "coordenadas__fila");
+                  var textoCelda = document.createTextNode(evento.value);
+                  celda.appendChild(textoCelda);
+                } else {
+                  var textarea = document.createElement("textarea");
+                  textarea.setAttribute("maxlength", "100");
+                  textarea.setAttribute("oninput", "autoResize(this)");
+                  textarea.classList.add("input-ajustada");
+                  textarea.classList.add("celdaClickNull");
+                  celda.classList.add("padre");
+                  celda.appendChild(textarea);
+              }
+            }
+            
+            ActualizarSelectFilas();
+            }
+          }
+    }
+    else{
+      if (filas < 100 && boolTitleCols == false) {
+        boolTitleCols = true;
+        var hilera = document.createElement("tr");
+        for (var j = 0; j <= 1; j++) {
+          var celda = document.createElement("td");
+          if (j === 0) {
+            celda.classList.add("coordenadas", "coordenadas__0T");
+            var textoCelda = document.createTextNode("T");
+            celda.appendChild(textoCelda);
+            hilera.appendChild(celda);
+          } else {
+            // Establecer el atributo colspan de la celda en el número de columnas de la tabla
+            celda.setAttribute("colspan", columnas + 1);
+          
+            // Crear un nuevo textarea y agregarlo a la celda
+            var textarea = document.createElement("textarea");
+            textarea.setAttribute("maxlength", "100");
+            textarea.setAttribute("oninput", "autoResize(this)");
+            textarea.classList.add("input-ajustada");
+            textarea.classList.add("celdaClickNull" , "MainTitle");
+            celda.appendChild(textarea);  
+            // Agregar la celda a la fila y la fila al cuerpo de la tabla
+            hilera.appendChild(celda);
+            tblBody.insertBefore(hilera, tblBody.rows[1]);
+          }
+        }
+      }
+      else if (filas < 100 && boolTitleCols == true){
+        // Funcion de eliminacion de titulo
+        // Obtener la fila que contiene la celda del título
+        var fila = tblBody.rows[1];
+  
+        // Verificar si la fila existe y si contiene la celda del título
+        if (fila && fila.cells.length > 1) {
+          // Eliminar la fila que contiene la celda del título
+          tblBody.removeChild(fila);
+          boolTitleCols = false;
+        }
       }
     }
     ActualizarSelectFilas();
   }
-  
 
+  // Obtener el elemento tablaPadre que contiene todos los textareas
+  let tablaPrincipal = document.querySelector(".tabla__tabla");
+  const contextMenu = document.querySelector('#contextMenu');
+  // Variables para almacenar el tiempo de inicio y fin del clic
+  let tiempoStart = 0;
+  let tiempoEnd = 0;
+
+  var ValueEvent = 0;
+  
+  // ---------------------------------------------------- //
+  // Funcion para que funcione en moviles de misma manera //
+  // Agregar un controlador de eventos touchstart al elemento padre
+  tablaPrincipal.addEventListener("touchstart", function(e) {
+    // Verificar si el elemento que se hizo clic es un textarea con la clase "celdaClickNull"
+    if (e.target.classList.contains("coordenadas")) {
+      // Establecer el tiempo de inicio del clic
+      tiempoStart = new Date().getTime();
+    }
+  });
+
+  // Agregar un controlador de eventos touchend al elemento padre
+  tablaPrincipal.addEventListener("touchend", function(e) {
+    // Verificar si el elemento que se hizo clic es un textarea con la clase "celdaClickNull"
+    if (e.target.classList.contains("coordenadas")) {
+      // Establecer el tiempo de fin del clic
+      tiempoEnd = new Date().getTime();
+
+      // Verificar si el tiempo transcurrido entre los dos eventos es mayor a 3 segundos
+      if (tiempoEnd - tiempoStart > 200) {
+        if (event.target.classList.contains("coordenadas__fila") ) {
+          let textarea = event.target;
+          textarea.value = textarea.textContent;
+          ValueEvent = textarea;
+            event.preventDefault();
+            contextMenu.style.top = `${event.clientY}px`;
+            contextMenu.style.left = `${event.clientX}px`;
+            contextMenu.style.display = 'block';
+          
+        }
+      }
+    }
+  });
+
+  tablaPrincipal.addEventListener('contextmenu', (event) => {
+    if (event.target.classList.contains("coordenadas__fila") ) {
+      let textarea = event.target;
+      textarea.value = textarea.textContent;
+      ValueEvent = textarea;
+        event.preventDefault();
+        contextMenu.style.top = `${event.clientY}px`;
+        contextMenu.style.left = `${event.clientX}px`;
+        contextMenu.style.display = 'block';
+      
+    }
+  });
+  document.addEventListener('click', () => {
+    contextMenu.style.display = 'none';
+});
+
+const liTitleDinamico = document.querySelector(".TitleFormation");
+
+liTitleDinamico.addEventListener("click",() => {
+  console.log(ValueEvent);
+  aggMainTitle(ValueEvent);
+})
