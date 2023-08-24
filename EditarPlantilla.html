@@ -17,6 +17,10 @@
         <link rel="stylesheet" href="./assets/css/secciones/pregunta-multiple.css">
         <link rel="stylesheet" href="./assets/css/secciones/tabla.css">
         <link rel="stylesheet" href="./assets/css/secciones/agg-seccion.css">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
     </head>
     <body>
         
@@ -24,7 +28,7 @@
             <div class="editar__Espaciado col-4"></div>
             <section class="editar__menuizq ">
                 <img src="./assets/img/🦆 icon _menu_.png" alt="toggle-menu" class="editar__menuicons">
-                <div class="editar__menuicons__bloque">
+                <div class="editar__menuicons__bloque div__MenuIzqBloque">
                     <a href="./index.html" class="editar__returnhome">
                         <img src="./assets/img/icon _home.png" alt="return-home" class="editar__menuicons editar__menuicons__bloque">
                     </a>
@@ -35,6 +39,9 @@
                     <h5 class="editar__titulo editar__tituloizq">Título ... </h2>
                     <p class="editar__menusecciones">Mis secciones</p>
 
+                    <div class="div__SeccionesMobibles">
+
+                    </div>
                 </div>
 
                 <div class="menu__agregarplantilla">
@@ -44,7 +51,7 @@
             </section>
 
             <section class="editar__plantilla__section col-8">
-                <h5 class="editar__titulo">Título</h4>
+                <h5 class="editar__titulo">Título</h5>
                     <!-- Seccion de agregar seccion -->
                     <div class="menu__agregarplantilla plantilla__agregar">
                         <p class="menu__agregarplantillatxt"> Agregar sección</p>
@@ -90,27 +97,12 @@
                 </div>
             </section>
         </section>
-
-        <script src="./js/Secciones/Texto/Ingresar-Texto.js"></script>
-
-        <script src="./js/Secciones/Texto/Edicion-Texto/Bold.js"></script>
-        <script src="./js/Secciones/Texto/Edicion-Texto/center.js"></script>
-        <script src="./js/Secciones/Texto/Edicion-Texto/H1.js"></script>
-        <script src="./js/Secciones/Texto/Edicion-Texto/H2.js"></script>
-        <script src="./js/Secciones/Texto/Edicion-Texto/justify.js"></script>
-        <script src="./js/Secciones/Texto/Edicion-Texto/List.js"></script>
-        <script src="./js/Secciones/Texto/Edicion-Texto/RedFont.js"></script>
-        <script src="./js/Secciones/Texto/Edicion-Texto/Size.js"></script>
-
-        <script src="./js/Secciones/Tabla/TitleColumn.js"></script>
-        <script src="./js/Secciones/Tabla/titleRows.js"></script>
-        <script src="./js/Secciones/Tabla/generar-tabla.js"></script>
-        <script src="./js/Secciones/Tabla/nulls-tabla.js"></script>
-
         <script src="./js/Editar Plantilla/left-menu.js"></script>
         <script src="./js/Editar Plantilla/agg-Seccion.js"></script>
         <script src="./js/Editar Plantilla/open-seccion.js"></script>
         <script src="./js/Editar Plantilla/poppers.js"></script>
-            
+        <script src="./js/Editar Plantilla/SeccionesMobibles.js"></script>
+        <script src="./js/Editar Plantilla/SeccionesMobiblesResponcive.js"></script>
+        <script src="./js/Editar Plantilla/deleteMobileSeccionResponsive.js"></script>
     </body>
 </html>

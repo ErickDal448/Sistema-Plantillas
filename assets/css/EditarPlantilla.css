@@ -17,15 +17,27 @@
     flex-direction: column;
     background: var(--background-menu);
     height: 100vh;
-    padding: 0rem 1rem 0rem 1rem;
+    padding: 1rem 1rem 0rem 1rem;
     width: 15.3vw;
     border-radius: 0px 15px 15px 0px;
+}
+
+.div__MenuIzqBloque{
+    cursor: pointer;
+    padding: 0.2rem;
+    margin-top: 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.div__MenuIzqBloque:hover{
+    background-color: var( --background-editor);
 }
 
 .editar__menuicons{
     width: 2rem;
     height: 2rem;
-    margin: 10px 1px 1px 0px;
 }
 
 .editar__menuicons:hover{
@@ -39,14 +51,13 @@
 }
 
 .editar__menunombre__bloque{
-    margin-left: 5px;
-    margin-top: 10px;
     color: var(--background-objetos);
     width: 100px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     margin-bottom: 0;
+    margin-left: 10px;
 }
 
 .editar__titulo{
@@ -62,7 +73,8 @@
     margin-top: 10px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    height: 75%;
+    height: 70%;
+    margin-bottom: 1rem;
     overflow-y: auto;
 }
 
@@ -74,6 +86,25 @@
 .editar__menuicons__plantilla:hover{
     cursor: pointer;
 }
+
+.editar__menuiconos__plantillas::-webkit-scrollbar {
+    width: 12px;
+}
+
+.editar__menuiconos__plantillas::-webkit-scrollbar-track {
+    background: var(--background-menu);
+    border-radius: 10px;
+}
+
+.editar__menuiconos__plantillas::-webkit-scrollbar-thumb {
+    background: var(--background-objetos);
+    border-radius: 10px;
+}
+
+.editar__menuiconos__plantillas::-webkit-scrollbar-thumb:hover {
+    background: var( --background-sistema);
+}
+
 
 .menu__agregarplantilla{
     display: flex;

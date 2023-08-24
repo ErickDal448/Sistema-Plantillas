@@ -34,7 +34,7 @@
 // agregar la plantilla seleccionada en el menu lateral
 const radioButtons = document.querySelectorAll('.inputSection');
 const addButton = document.querySelector('.btn__plantilla');
-const menuIconos = document.querySelector('.editar__menuiconos__plantillas');
+const menuIconos = document.querySelector('.div__SeccionesMobibles');
 
 addButton.addEventListener('click', () => {
   let selectedLabel;
@@ -49,7 +49,7 @@ addButton.addEventListener('click', () => {
   });
 
   const bloque = document.createElement('div');
-  bloque.classList.add('editar__menuicons__bloque');
+  bloque.classList.add('editar__menuicons__bloque', 'div__MenuIzqBloque', 'div__MobileBlock');
   const img = document.createElement('img');
   
   img.classList.add('editar__menuicons__plantilla', 'editar__menuicons__bloque');

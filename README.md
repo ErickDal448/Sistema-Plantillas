@@ -14,10 +14,9 @@ Este sistema está hecho para poder crear y guardar plantillas de documentos PDF
 - **2: Edición de secciones.** Este apartado se encuentra en el menú izquierdo y se pueden agregar secciones, eliminarlas y editarlas.
 ----
 - - **2.1: Agregar secciones.** Se Pueden agregar diferentes tipos de secciones como textos, preguntas abiertas, preguntas de opción múltiple y tablas. Dichas secciones se irán agregando en el menú izquierdo del sistema.
-- - **2.2: Eliminar secciones.** (Por definir)... "Mantener pulsado para eliminar" || "click derecho eliminar" || "arrastrar a cierta zona de la pantalla para eliminar"
+- - **2.2: Eliminar secciones.** Se pueden eliminar las secciones arrastrándolas al icono de basura que se forma abajo del menú izquierdo, para posteriormente seleccionar si quiere eliminar ese elemento o no.
 - - **2.3: Editar secciones.** Al momento de darle click a tus secciones de lado izquierdo puedes editar dichas secciones donde su información se mostrara de lado derecho.
-- - **2.4: Mover secciones** (Por definir)... 
-"Arrastrar al lugar donde se quiera poner" || "click derecho -> mover hacia arriba o abajo"
+- - **2.4: Mover secciones.** Se puede mover el orden de las secciones arrastrando los elementos de secciones que se tengan en el orden que se quiera formar.
 ---
 - **3: Formatos de tipos de secciones.** Cada tipo de sección tiene cierto formato el cual debe de ser editable para el usuario.
 ----
